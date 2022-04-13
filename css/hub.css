@@ -9,10 +9,6 @@
 	padding: 0;
 }
 
-/*body, html {
-	height: 1000%;
-}*/
-
 body {
 	padding: 20px;
 	padding-top: 150px;
@@ -106,10 +102,12 @@ a {
 	background: rgb(230, 230, 255);
 }
 
+.games-container-container {
+
+}
+
 .games-container {
-	margin-top: -493px;
-	margin-left: 300px;
-	float: right;
+	float: left;
 }
 
 .game-tile {
@@ -137,7 +135,7 @@ a {
 }
 
 #uwu {
-	background-image: url('../resources/logo.jpg');
+	background-image: url('../games/uwu/icon.png');
 }
 
 #lineRace {
