@@ -16,7 +16,7 @@ function switchFilter(value) {
 	}
 	document.getElementById(`${value}-filter`).style.color = 'green';
 	if (value == null) {
-		for (let i if allFilters) {
+		for (let i of allFilters) {
 			document.getElementById(`${i}-filter`).style.color = 'black';
 		}
 		for (let i of games) {
