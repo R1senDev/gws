@@ -46,21 +46,21 @@ body {
 }
 
 .ad-left {
-    margin-left: 20px;
-    margin-top: 50px;
-    width: 200px;
-    border-radius: 10px 10px 10px 10px;
-    border-color: black;
+	margin-left: 20px;
+	margin-top: 50px;
+	width: 200px;
+	border-radius: 10px 10px 10px 10px;
+	border-color: black;
 	border-right-style: solid;
 	border-bottom-style: solid;
 	cursor: pointer;
 }
 
 .left-coloumn-container {
-    width: 200px;
-    text-align: center;
-    float: left;
-    margin-right: 90px;
+	width: 200px;
+	text-align: center;
+	float: left;
+	margin-right: 90px;
 }
 
 .left-coloumn {
@@ -100,10 +100,6 @@ a {
 
 .genre:hover {
 	background: rgb(230, 230, 255);
-}
-
-.games-container-container {
-
 }
 
 .games-container {
