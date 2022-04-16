@@ -1,0 +1,139 @@
+@font-face {
+	font-family: 'Comic CAT';
+	src: local('Comic CAT'),
+		url('../resources/ComicCAT.otf');
+}
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	padding: 20px;
+	padding-top: 150px;
+	font-family: 'Comic CAT';
+}
+
+.icon1 {
+	width: 85px;
+	height: 85px;
+	float: left;
+	margin-right: 30px;
+	border-radius: 20px;
+}
+
+.header {
+	background-color: rgb(204, 204, 255);
+	padding: 20px;
+	margin: -150px -20px 0 -20px;
+	font-size: 40px;
+	border-radius: 0 0 20px 20px;
+	width: 100%;
+	height: 90px;
+	position: fixed;
+	border-color: black;
+	border-right-style: solid;
+	border-bottom-style: solid;
+}
+
+.description {
+	margin-bottom: 20px;
+}
+
+.description, .genre-label {
+	font-size: 20px;
+}
+
+.ad-left {
+	margin-left: 20px;
+	margin-top: 50px;
+	width: 200px;
+	border-radius: 10px 10px 10px 10px;
+	border-color: black;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	cursor: pointer;
+}
+
+.left-coloumn-container {
+	width: 200px;
+	text-align: center;
+	float: left;
+	margin-right: 90px;
+}
+
+.left-coloumn {
+	text-align: left;
+	background-color: rgb(204, 204, 255);
+	margin: 0 20px 20px -20px;
+	display: inline-block;
+	padding: 4px 20px 0 0;
+	border-radius: 0 10px 10px 0;
+	border-color: black;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	width: 250px;
+	float: left;
+}
+
+hr {
+	margin: 0 -20px 0 -20px;
+	border: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+.genres-title {
+	font-size: 30px;
+	margin-left: 20px;
+}
+
+a {
+	text-decoration: none;
+	color: black;
+}
+
+.genre {
+	cursor: pointer;
+	padding: 4px 0 4px 20px;
+	width: 100%;
+}
+
+.genre:hover {
+	background: rgb(230, 230, 255);
+}
+
+.games-container {
+	float: left;
+}
+
+.game-tile {
+	border-radius: 10px;
+	width: 180px;
+	height: 180px;
+	float: left;
+	cursor: pointer;
+	margin-right: 20px;
+	margin-bottom: 20px;
+	text-align: center;
+	background-size: 180px 180px;
+}
+
+.game-tile-overlay {
+	background-color: rgba(255, 255, 255, 0);
+	border-radius: 10px;
+	height: 100%;
+}
+
+.game-tile-overlay:hover {
+	background-color: rgba(255, 255, 255, 0.5);
+	border-radius: 10px;
+	height: 100%;
+}
+
+#uwu {
+	background-image: url('../games/uwu/icon.png');
+}
+
+#lineRace {
+	background-image: url('../games/lineRace/icon.png');
+}
