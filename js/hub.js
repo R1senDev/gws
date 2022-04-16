@@ -21,7 +21,7 @@ function switchFilter(filterName) {
 	// set opposite value for choosen filter
 	allFilters.set(filterName, !allFilters.get(filterName));
 
-	// проверить, есть ли активные фильтры
+	// пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 	if (isFiltersClear()) {
 		clearFilters();
 	}
