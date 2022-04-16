@@ -36,4 +36,3 @@ function switchFilter(value) {
 		}
 	}
 }
-switchFilter('null');
