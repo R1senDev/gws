@@ -7,33 +7,53 @@ class Game {
 }
 
 let games = [new Game('uwu', ['antistress']), new Game('lineRace', ['race'])];
-let allFilters = ['antistress', 'race', 'platformer', 'clicker'];
+let allFilters = new Map(
+	[
+	['antistress', true],
+	['race', true],
+	['platformer', true],
+	['clicker', true]
+	]
+);
 
-function switchFilter(value) {
-	for (let i of games) {
-		i.elem.style.opacity = 1;
+function switchFilter(filterName) {
+	
+	// set opposite value for choosen filter
+	allFilters.set(filterName, !allFilters.get(filterName));
+
+	// проверить, есть ли активные фильтры
+	if (isFiltersClear()) {
+		clearFilters();
 	}
-	for (let i of allFilters) {
-		document.getElementById(`${i}-filter`).style.color = 'black';
-	}
-	document.getElementById(`${value}-filter`).style.color = 'green';
-	if (value == 'null') {
-		for (let i of allFilters) {
-			document.getElementById(`${i}-filter`).style.color = 'black';
-		}
-		for (let i of games) {
-			alert(`Setting ${i.name}.style.opacity to 1`);
-			i.elem.style.opacity = 1;
-		}
+
+	// change filter_object color on the page
+	if (allFilters.get(filterName)) {
+		document.getElementById(`${filterName}-filter`).style.color = 'black';
 	} else {
-		document.getElementById(`${value}-filter`).style.color = 'green';
-		for (let i of games) {
-			if (i.tags.includes(value)) {
-				i.elem.style.opacity = 1;
-			} else {
-				i.elem.style.opacity = 0.2;
-			}
+		document.getElementById(`${filterName}-filter`).style.color = 'green';
+	}
+
+	// change game_objects opacity on the page
+	for (let game of games) {
+		if (game.tags.includes(filterName) && !allFilters.get(filterName)) {
+			game.elem.style.opacity = 1;
+		} else if (game.tags.includes(filterName)) {
+			game.elem.style.opacity = 0.2;
 		}
 	}
 }
-switchFilter('null');
+
+function clearFilters() {
+	for (let fltr of allFilters.keys()) {
+		allFilters.set(fltr, true);
+	}
+}
+
+function isFiltersClear() {
+	for (let fltr of allFilters.keys()) {
+		if (allFilters.get(fltr)) {
+			return false;
+		}
+	}
+	return true;
+}
