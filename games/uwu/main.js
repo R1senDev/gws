@@ -5,7 +5,7 @@ let devTools = {
 };
 
 let canvas = document.getElementById('canvas');
-let context = canvas.getContext('2d');
+let ctx = canvas.getContext('2d');
 
 let mouthPos = [Math.round(canvas.width / 2), Math.round(canvas.height / 3 * 2)];
 let eyePos = [
@@ -71,7 +71,6 @@ let sprites = {
 		staggered: new Image(102, 137),
 		surprised: new Image(94, 17),
 	},
-	back: new Image(636, 61),
 };
 
 sprites.left.eye.angry.src = 'left/eye/angry.png';
@@ -158,25 +157,23 @@ function currentMouthSprite() {
 	}
 }
 
-sprites.back.src = 'backText.png';
-
 function fillCircle(x, y, r, color) {
-	context.beginPath();
-	context.arc(x, y, r, 0, 2 * Math.PI, false);
-	context.fillStyle = color;
-	context.fill();
-	context.lineWidth = 1;
-	context.strokeStyle = color;
-	context.stroke();
+	ctx.beginPath();
+	ctx.arc(x, y, r, 0, 2 * Math.PI, false);
+	ctx.fillStyle = color;
+	ctx.fill();
+	ctx.lineWidth = 1;
+	ctx.strokeStyle = color;
+	ctx.stroke();
 }
 
 function drawByCenter(img, x, y) {
-	context.drawImage(img, x - Math.round(img.width / 2), y - Math.round(img.height / 2), img.width, img.height);
+	ctx.drawImage(img, x - Math.round(img.width / 2), y - Math.round(img.height / 2), img.width, img.height);
 }
 
 function fillBg() {
-	context.fillStyle = 'black';
-	context.fillRect(0, 0, canvas.width, canvas.height);
+	ctx.fillStyle = 'black';
+	ctx.fillRect(0, 0, canvas.width, canvas.height);
 }
 fillBg();
 
@@ -187,16 +184,14 @@ function redraw() {
 	drawByCenter(currentEyeSprite('right'), eyePos[1][0], eyePos[1][1]);
 	drawByCenter(currentMouthSprite(), mouthPos[0], mouthPos[1]);
 
-	context.drawImage(sprites.back, 0, 0, sprites.back.width / 2, sprites.back.height / 2);
-
 	if (devTools.showCursorPath) {
 		fillCircle(mouse.sx, mouse.sy, 5, 'red');
-		context.beginPath();
-		context.moveTo(mouse.sx, mouse.sy);
-		context.lineTo(mouse.x, mouse.y);
-		context.strokeStyle = 'red';
-		context.lineWidth = 2;
-		context.stroke();
+		ctx.beginPath();
+		ctx.moveTo(mouse.sx, mouse.sy);
+		ctx.lineTo(mouse.x, mouse.y);
+		ctx.strokeStyle = 'red';
+		ctx.lineWidth = 2;
+		ctx.stroke();
 	}
 }
 
@@ -231,9 +226,6 @@ document.addEventListener('mousedown', function(event) {
 	mouse.sx = event.clientX;
 	mouse.sy = event.clientY;
 	mouse.key = event.button;
-	if (mouse.x <= sprites.back.width / 2 && mouse.y <= sprites.back.height / 2) {
-		this.location.href = '../../index.html';
-	}
 });
 document.addEventListener('mousemove', function(event) {
 	mouse.x = event.clientX;
@@ -241,11 +233,6 @@ document.addEventListener('mousemove', function(event) {
 	if (mouse.key == null) {
 		mouse.sx = mouse.x;
 		mouse.sy = mouse.y;
-	}
-	if (mouse.x <= sprites.back.width / 2 && mouse.y <= sprites.back.height / 2) {
-		canvas.style.cursor = 'pointer';
-	} else {
-		canvas.style.cursor = 'auto';
 	}
 });
 document.addEventListener('mouseup', function(event) {
