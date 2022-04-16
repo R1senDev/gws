@@ -4,6 +4,8 @@ let devTools = {
 	showCursorPath: false,
 };
 
+document.body.style.overflow = 'hidden';
+
 let canvas = document.getElementById('canvas');
 let context = canvas.getContext('2d');
 
@@ -15,7 +17,7 @@ let eyePos = [
 
 function updateCanvasSize() {
 	canvas.width = document.body.clientWidth;
-	canvas.height = document.body.clientHeight;
+	canvas.height = document.body.clientHeight + 50;
 	mouthPos = [Math.round(canvas.width / 2), Math.round(canvas.height / 3 * 2)];
 	eyePos = [
 		[Math.round(canvas.width / 3 - 50), Math.round(canvas.height / 3)],

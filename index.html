@@ -6,8 +6,9 @@
 	<title>Lorem Ipsum</title>
 </head>
 <body>
+	<div class="header-protector"></div>
 	<div class="header">
-		<img class="icon1" src="resources/logo.jpg" href="index.html">
+		<img class="icon1" src="resources/logo.jpg" onclick="location.href = 'index.html'">
 		<h1 class="header-name" href="index.html">Lorem Ipsum</h1>
 	</div>
 	<p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo<p>
@@ -16,26 +17,29 @@
 			<p class="genres-title">Игры по жанрам</p>
 			<hr>
 			<div class="genre" onclick="switchFilter('antistress')">
-				<p class="genre-label" id="antistress-filter">Антистрессы (1)</p>
+				<p class="genre-label" id="antistress-filter">Антистрессы</p>
 			</div>
 			<hr>
 			<div class="genre" onclick="switchFilter('race')">
-				<p class="genre-label" id="race-filter">Гонки (1)</p>
+				<p class="genre-label" id="race-filter">Гонки</p>
 			</div>
 			<hr>
 			<div class="genre" onclick="switchFilter('platformer')">
-				<p class="genre-label" id="platformer-filter">Платформеры (0)</p>
+				<p class="genre-label" id="platformer-filter">Платформеры</p>
 			</div>
 			<hr>
 			<div class="genre" onclick="switchFilter('clicker')">
-				<p class="genre-label" id="clicker-filter">Кликеры (0)</p>
+				<p class="genre-label" id="clicker-filter">Кликеры</p>
 			</div>
 			<hr>
-			<div class="genre" onclick="switchFilter('null')">
+			<div class="genre" onclick="clearFilters()">
 				<p class="genre-label">Сбросить фильтр</p>
 			</div>
 		</div>
-	<img class="ad-left" src="resources/ad.jpg" onclick="window.location = 'https://ru.m.wiktionary.org/wiki/scam'">
+	<div class="ad-left-container">
+		<p class="ad-left-text">Реклама</p>
+		<img class="ad-left" src="resources/ad.jpg" onclick="window.location =	 'https://ru.m.wiktionary.org/wiki/scam'">
+	</div>
 	</div>
 	<div class="games-container-container">
 		<div class="games-container">
