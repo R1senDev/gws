@@ -3,7 +3,7 @@ class Game {
 		this.elem = document.getElementById(name);
 		this.name = name;
 		this.tags = tags;
-	};
+	}
 	isVisible = function() {
 		for (let tag of this.tags) {
 			if (allFilters.get(tag)) {
@@ -46,7 +46,7 @@ function switchFilter(filterName) {
 		}
 	}
 
-	// проверяем, если все фильтры отключены, то отображаем все игры
+	// ГЇГ°Г®ГўГҐГ°ГїГҐГ¬, ГҐГ±Г«ГЁ ГўГ±ГҐ ГґГЁГ«ГјГІГ°Г» Г®ГІГЄГ«ГѕГ·ГҐГ­Г», ГІГ® Г®ГІГ®ГЎГ°Г Г¦Г ГҐГ¬ ГўГ±ГҐ ГЁГЈГ°Г»
 	if (isClear()) {
 		for (let game of games) {
 			game.elem.style.opacity = 1;
@@ -54,7 +54,7 @@ function switchFilter(filterName) {
 	}
 }
 
-// очищает фильтры
+// Г®Г·ГЁГ№Г ГҐГІ ГґГЁГ«ГјГІГ°Г»
 function clearFilters() {
 	for (let fltr of allFilters.keys()) {
 		allFilters.set(fltr, false);
@@ -65,7 +65,7 @@ function clearFilters() {
 	}
 }
 
-// если все фильтры отключены, возвращяет true
+// ГҐГ±Г«ГЁ ГўГ±ГҐ ГґГЁГ«ГјГІГ°Г» Г®ГІГЄГ«ГѕГ·ГҐГ­Г», ГўГ®Г§ГўГ°Г Г№ГїГҐГІ true
 function isClear() {
 	for (let fltr of allFilters.keys()) {
 		if (allFilters.get(fltr)) {
