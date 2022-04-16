@@ -15,13 +15,12 @@ class Game {
 }
 
 let games = [new Game('uwu', ['antistress']), new Game('lineRace', ['race'])];
-let allFilters = new Map(
-	[
+let allFilters = new Map([
 	['antistress', false],
 	['race', false],
 	['platformer', false],
-	['clicker', false]
-	]
+	['clicker', false],
+]
 );
 
 function switchFilter(filterName) {
@@ -32,7 +31,6 @@ function switchFilter(filterName) {
 	// change filter_object color on the page
 	if (!allFilters.get(filterName)) {
 		document.getElementById(`${filterName}-filter`).style.color = 'black';
-
 	} else {
 		document.getElementById(`${filterName}-filter`).style.color = 'green';
 	}
@@ -46,7 +44,7 @@ function switchFilter(filterName) {
 		}
 	}
 
-	// проверяем, если все фильтры отключены, то отображаем все игры
+	// ГЇГ°Г®ГўГҐГ°ГїГҐГ¬, ГҐГ±Г«ГЁ ГўГ±ГҐ ГґГЁГ«ГјГІГ°Г» Г®ГІГЄГ«ГѕГ·ГҐГ­Г», ГІГ® Г®ГІГ®ГЎГ°Г Г¦Г ГҐГ¬ ГўГ±ГҐ ГЁГЈГ°Г»
 	if (isClear()) {
 		for (let game of games) {
 			game.elem.style.opacity = 1;
@@ -54,7 +52,7 @@ function switchFilter(filterName) {
 	}
 }
 
-// очищает фильтры
+// Г®Г·ГЁГ№Г ГҐГІ ГґГЁГ«ГјГІГ°Г»
 function clearFilters() {
 	for (let fltr of allFilters.keys()) {
 		allFilters.set(fltr, false);
@@ -65,7 +63,7 @@ function clearFilters() {
 	}
 }
 
-// если все фильтры отключены, возвращяет true
+// ГҐГ±Г«ГЁ ГўГ±ГҐ ГґГЁГ«ГјГІГ°Г» Г®ГІГЄГ«ГѕГ·ГҐГ­Г», ГўГ®Г§ГўГ°Г Г№ГїГҐГІ true
 function isClear() {
 	for (let fltr of allFilters.keys()) {
 		if (allFilters.get(fltr)) {
