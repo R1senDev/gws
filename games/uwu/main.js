@@ -1,7 +1,7 @@
 let lineNow = 1;
 let devTools = {
 	showBorders: false,
-	showCursorPath: false,
+	showCursorPath: true,
 };
 
 document.body.style.overflow = 'hidden';

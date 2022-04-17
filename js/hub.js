@@ -73,8 +73,19 @@ function isClear() {
 	return true;
 }
 
-// MEGA CRUTCH (by @R1senDev (cuz I'm very proud of it (no)))
 document.addEventListener('DOMContentLoaded', function() {
+	// Crutch
 	switchFilter('antistress');
 	switchFilter('antistress');
+	
+	let counter = 0;
+	for (let i of allFilters.keys()) {
+		counter = 0;
+		for (let j of games) {
+			if (j.tags.includes(i)) {
+				counter++;
+			}
+		}
+		document.getElementById(`${i}-filter`).textContent = document.getElementById(`${i}-filter`).textContent.replace('0', counter);
+	}
 });
