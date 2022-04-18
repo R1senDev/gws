@@ -24,18 +24,17 @@ let allFilters = new Map([
 );
 
 function switchFilter(filterName) {
-	
-	// set opposite value for choosen filter
+	// Set opposite value for choosen filter
 	allFilters.set(filterName, !allFilters.get(filterName));
 
-	// change filter_object color on the page
+	// Change filter_object color on the page
 	if (!allFilters.get(filterName)) {
 		document.getElementById(`${filterName}-filter`).style.color = 'black';
 	} else {
 		document.getElementById(`${filterName}-filter`).style.color = 'green';
 	}
 
-	// change game_objects opacity on the page
+	// Change game_objects opacity on the page
 	for (let game of games) {
 		if (game.isVisible()) {
 			game.elem.style.opacity = 1;
@@ -44,6 +43,7 @@ function switchFilter(filterName) {
 		}
 	}
 
+	// Something in faggot:
 	// ïðîâåðÿåì, åñëè âñå ôèëüòðû îòêëþ÷åíû, òî îòîáðàæàåì âñå èãðû
 	if (isClear()) {
 		for (let game of games) {
@@ -72,3 +72,25 @@ function isClear() {
 	}
 	return true;
 }
+
+
+// function for theme switch button
+let activeLightTheme = true;
+function switchTheme() {
+	if (activeLightTheme) {
+		document.getElementById('theme-button').src="resources/dark-theme-button.png";
+		document.body.style.backgroundImage = "url('resources/pattern-6-dark.png')";
+		activeLightTheme = false;
+	} else {
+		document.getElementById('theme-button').src="resources/light-theme-button.png";
+		document.body.style.backgroundImage = "url('resources/pattern-6-light.png')";
+		activeLightTheme = true;
+	}
+	activeDarkTheme = !activeDarkTheme;
+}
+
+// MEGA CRUTCH (by @R1senDev (cuz I'm very proud of it (no)))
+document.addEventListener('DOMContentLoaded', function() {
+	switchFilter('antistress');
+	switchFilter('antistress');
+});

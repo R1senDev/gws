@@ -1,53 +1,102 @@
 <!DOCTYPE html>
 <html>
+
+<!-- Head -->
 <head>
 	<meta charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="css/hub.css">
 	<title>Lorem Ipsum</title>
 </head>
+
+<!-- Body -->
 <body>
+
+	<!-- Page's Header -->
+	<div class="header-protector"></div>
 	<div class="header">
-		<img class="icon1" src="resources/logo.jpg" href="index.html">
+		<img class="icon1" src="resources/logo.jpg" onclick="location.href = 'index.html'">
+		<img class="page-theme-switcher" id="theme-button" src="resources/light-theme-button.png" onclick="switchTheme()">
 		<h1 class="header-name" href="index.html">Lorem Ipsum</h1>
 	</div>
+
+	<!-- Page's description -->
 	<p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo<p>
+	
+	<!-- Left column with Filters and Ads -->
 	<div class="left-coloumn-container">
+
+		<!-- All Filters -->
 		<div class="left-coloumn">
 			<p class="genres-title">Игры по жанрам</p>
 			<hr>
-			<div class="genre" onclick="switchFilter('antistress')">
-				<p class="genre-label" id="antistress-filter">Антистрессы (1)</p>
-			</div>
-			<hr>
-			<div class="genre" onclick="switchFilter('race')">
-				<p class="genre-label" id="race-filter">Гонки (1)</p>
-			</div>
-			<hr>
-			<div class="genre" onclick="switchFilter('platformer')">
-				<p class="genre-label" id="platformer-filter">Платформеры (0)</p>
-			</div>
-			<hr>
-			<div class="genre" onclick="switchFilter('clicker')">
-				<p class="genre-label" id="clicker-filter">Кликеры (0)</p>
-			</div>
-			<hr>
-			<div class="genre" onclick="clearFilters()">
+
+			<!-- Clear button -->
+			<div class="genre-clear" onclick="clearFilters()">
 				<p class="genre-label">Сбросить фильтр</p>
 			</div>
+			<hr>
+
+			<!-- Antistress -->
+			<div class="genre" onclick="switchFilter('antistress')">
+				<p class="genre-label" id="antistress-filter">Антистрессы</p>
+			</div>
+			<hr>
+
+			<!-- Race -->
+			<div class="genre" onclick="switchFilter('race')">
+				<p class="genre-label" id="race-filter">Гонки</p>
+			</div>
+			<hr>
+
+			<!-- Platformer -->
+			<div class="genre" onclick="switchFilter('platformer')">
+				<p class="genre-label" id="platformer-filter">Платформеры</p>
+			</div>
+			<hr>
+
+			<!-- Clicker -->
+			<div class="genre" onclick="switchFilter('clicker')">
+				<p class="genre-label" id="clicker-filter">Кликеры</p>
+			</div>
+			<hr>
+
 		</div>
-	<img class="ad-left" src="resources/ad.jpg" onclick="window.location = 'https://ru.m.wiktionary.org/wiki/scam'">
+
+		<!-- All Ads -->
+		<div class="ad-left-container">
+			<div class="ad-left-text">Р<br>е<br>к<br>л<br>а<br>м<br>а</div>
+
+			<!-- First Ad banner -->
+			<img class="ad-left" src="resources/ad.jpg" onclick="window.location =	 'https://ru.m.wiktionary.org/wiki/scam'">
+
+			<!-- Next Ad banners... -->
+		</div>
+
 	</div>
+
+	<!-- Games' field -->
 	<div class="games-container-container">
+
+		<!-- First game container -->
 		<div class="games-container">
+
+			<!-- UwU -->
 			<div class="game-tile" id="uwu" href="games/uwu/uwu.html" onclick="window.location = 'games/uwu/uwu.html'">
 				<div class="game-tile-overlay"></div>
 			</div>
+
+			<!-- lineRace -->
 			<div class="game-tile" id="lineRace">
 				<div class="game-tile-overlay"></div>
 			</div>
+
 		</div>
+
+		<!-- Next game containers... -->
 	</div>
 
+	<!-- Запуск JavaScript сценария для главной страницы -->
 	<script type="text/javascript" src="js/hub.js"></script>
+
 </body>
 </html>
