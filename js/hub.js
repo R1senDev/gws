@@ -73,19 +73,23 @@ function isClear() {
 	return true;
 }
 
+// function for theme switch button
+let activeLightTheme = true;
+function switchTheme() {
+	if (activeLightTheme) {
+		document.getElementById('theme-button').src="resources/dark-theme-button.png";
+		document.body.style.backgroundImage = "url('resources/pattern-6-dark.png')";
+		activeLightTheme = false;
+	} else {
+		document.getElementById('theme-button').src="resources/light-theme-button.png";
+		document.body.style.backgroundImage = "url('resources/pattern-6-light.png')";
+		activeLightTheme = true;
+	}
+	activeDarkTheme = !activeDarkTheme;
+}
+
 document.addEventListener('DOMContentLoaded', function() {
 	// Crutch
 	switchFilter('antistress');
 	switchFilter('antistress');
-	
-	let counter = 0;
-	for (let i of allFilters.keys()) {
-		counter = 0;
-		for (let j of games) {
-			if (j.tags.includes(i)) {
-				counter++;
-			}
-		}
-		document.getElementById(`${i}-filter`).textContent = document.getElementById(`${i}-filter`).textContent.replace('0', counter);
-	}
 });

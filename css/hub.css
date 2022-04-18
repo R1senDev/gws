@@ -13,6 +13,15 @@ body {
 	padding: 20px;
 	padding-top: 150px;
 	font-family: 'Comic CAT';
+	background-image: url('../resources/pattern-6-light.png');
+	background-repeat: repeat;
+}
+.page-theme-switcher {
+	width: 30px;
+	height: 30px;
+	float: right;
+	margin-right: 30px;
+	cursor: pointer;
 }
 
 .icon1 {
@@ -60,31 +69,33 @@ body {
 	font-size: 20px;
 }
 
-.genre-label, .header {
+.header, .left-coloumn-container {
 	-webkit-touch-callout: none;
 	-webkit-user-select: none;
-	-khtml-user-select: none;
+	/*-html-user-select: none;*/
 	-moz-user-select: none;
 	-ms-user-select: none;
 	user-select: none;
 }
 
 .ad-left-container {
-	margin: 50px 0 50px -20px;
+	margin: 0 0 50px -20px;
 	padding-left: 20px;
 	background-color: rgb(204, 204, 255);
-	border-radius: 0 10px 10px 0;
-	border-color: black;
-	border-right-style: solid;
-	border-bottom-style: solid;
+	border-radius: 0 5px 5px 0;
+	border-color: rgb(0, 0, 0, 0.9);
+	border-right-style: inset;
+	border-bottom-style: inset;
+	border-top-style: inset;
 }
 
 .ad-left-text {
-	writing-mode: vertical-lr;
-	transform: rotate(180deg);
-	font-size: 15px;
+	text-orientation: mixed;
+	line-height: 1;
+	font-size: 18px;
 	float: left;
-	margin: 20px 0 0 -20px;
+	margin: auto 5px auto -17px;
+	text-align: center;
 }
 
 .ad-left {
@@ -120,7 +131,7 @@ hr {
 
 .genres-title {
 	font-size: 30px;
-	margin-left: 20px;
+	margin-left: 12%;
 }
 
 a {
@@ -130,7 +141,14 @@ a {
 
 .genre {
 	cursor: pointer;
-	padding: 4px 0 4px 20px;
+	padding: 4px 8% 4px 10px;
+	width: 100%;
+}
+.genre-clear {
+	font-size: large;
+	cursor: pointer;
+	text-align: center;
+	color: rgb(72, 90, 139);
 	width: 100%;
 }
 
