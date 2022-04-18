@@ -15,7 +15,7 @@
 	<div class="header-protector"></div>
 	<div class="header">
 		<img class="icon1" src="resources/logo.jpg" onclick="location.href = 'index.html'">
-		<img class="page-theme-switcher" id="theme-button" src="resources/light-theme-button.png" onclick="switchTheme()">
+		<img class="page-theme-switcher" id="theme-button" src="resources/dark-theme-button.png" onclick="switchTheme()">
 		<h1 class="header-name" href="index.html">Lorem Ipsum</h1>
 	</div>
 
@@ -28,11 +28,10 @@
 		<!-- All Filters -->
 		<div class="left-coloumn">
 			<p class="genres-title">Игры по жанрам</p>
-			<hr>
 
 			<!-- Clear button -->
 			<div class="genre-clear" onclick="clearFilters()">
-				<p class="genre-label">Сбросить фильтр</p>
+				<p class="genre-label" id="genre-clear">Сбросить фильтр</p>
 			</div>
 			<hr>
 
@@ -50,13 +49,13 @@
 
 			<!-- Platformer -->
 			<div class="genre" onclick="switchFilter('platformer')">
-				<p class="genre-label" id="platformer-filter">Платформеры</p>
+				<p class="genre-label" id="platformer-filter">Платформеры (0)</p>
 			</div>
 			<hr>
 
 			<!-- Clicker -->
 			<div class="genre" onclick="switchFilter('clicker')">
-				<p class="genre-label" id="clicker-filter">Кликеры</p>
+				<p class="genre-label" id="clicker-filter">Кликеры (0)</p>
 			</div>
 			<hr>
 
