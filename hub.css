@@ -39,6 +39,7 @@ body {
 
 .description {
 	margin-bottom: 20px;
+	text-align: justify;
 }
 
 .description, .genre-label {

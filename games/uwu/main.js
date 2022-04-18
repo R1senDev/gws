@@ -1,7 +1,7 @@
 let lineNow = 1;
 let devTools = {
 	showBorders: false,
-	showCursorPath: false,
+	showCursorPath: true,
 };
 
 document.body.style.overflow = 'hidden';
@@ -182,11 +182,34 @@ function fillBg() {
 }
 fillBg();
 
+function lineAndMoveTo(x, y) {
+	context.lineTo(x, y);
+	context.moveTo(x, y);
+}
+
 function redraw() {
 	fillBg();
 
 	drawByCenter(currentEyeSprite('left'), eyePos[0][0], eyePos[0][1]);
 	drawByCenter(currentEyeSprite('right'), eyePos[1][0], eyePos[1][1]);
+	if (mouse.key > -1 && mouse.y > eyePos[0][1] + currentEyeSprite('left').height / 3 && currentEyesState == 'idle') {
+		context.strokeStyle = 'black';
+		if (mouse.x <= canvas.width / 2) {
+			context.beginPath();
+			for (let i = -100; i <= 200; i++) {
+				context.moveTo(0, canvas.height / 2);
+				context.lineTo(canvas.width / 2, mouse.y + i);
+			}
+			context.stroke();
+		} else {
+			context.beginPath();
+			for (let i = -100; i <= 200; i++) {
+				context.moveTo(canvas.width, canvas.height / 2);
+				context.lineTo(canvas.width / 2, mouse.y + i);
+			}
+			context.stroke();
+		}
+	}
 	drawByCenter(currentMouthSprite(), mouthPos[0], mouthPos[1]);
 
 	context.drawImage(sprites.back, 0, 0, sprites.back.width / 2, sprites.back.height / 2);
@@ -203,7 +226,7 @@ function redraw() {
 }
 
 let mouse = {
-	key: null,
+	key: -1,
 	x: 0,
 	y: 0,
 	sx: 0,
@@ -240,7 +263,7 @@ document.addEventListener('mousedown', function(event) {
 document.addEventListener('mousemove', function(event) {
 	mouse.x = event.clientX;
 	mouse.y = event.clientY;
-	if (mouse.key == null) {
+	if (mouse.key == -1) {
 		mouse.sx = mouse.x;
 		mouse.sy = mouse.y;
 	}
@@ -251,7 +274,7 @@ document.addEventListener('mousemove', function(event) {
 	}
 });
 document.addEventListener('mouseup', function(event) {
-	mouse.key = null;
+	mouse.key = -1;
 });
 
 setInterval(function() {

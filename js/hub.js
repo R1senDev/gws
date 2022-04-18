@@ -73,7 +73,6 @@ function isClear() {
 	return true;
 }
 
-
 // function for theme switch button
 let activeLightTheme = true;
 function switchTheme() {
@@ -89,8 +88,8 @@ function switchTheme() {
 	activeDarkTheme = !activeDarkTheme;
 }
 
-// MEGA CRUTCH (by @R1senDev (cuz I'm very proud of it (no)))
 document.addEventListener('DOMContentLoaded', function() {
+	// Crutch
 	switchFilter('antistress');
 	switchFilter('antistress');
 });
