@@ -34,7 +34,7 @@ function switchFilter(filterName) {
 		document.getElementById(`${filterName}-filter`).style.color = 'green';
 	}
 
-	// Change game_objects opacity on the page
+	// Change gameObjects opacity on the page
 	for (let game of games) {
 		if (game.isVisible()) {
 			game.elem.style.opacity = 1;
@@ -97,16 +97,25 @@ function switchTheme() {
 	}
 
 	for (let elem of ps) {
-		elem.style.color = newTextColor;
-	}
-	document.getElementById('genre-clear').style.color = 'rgb(72, 90, 139)';
-	for (let elem of divs) {
-		if (elem.style.backgroundColor == 'rgb(102, 0, 153)') {
-			elem.style.backgroundColor = 'rgb(204, 204, 255)';
-		} else {
-			elem.style.backgroundColor = 'rgb(102, 0, 153)';
+		if (!elem.className.includes(' fixed-color') && elem.className != 'fixed-color') {
+			elem.style.color = newTextColor;
 		}
 	}
+	if (activeLightTheme) {
+		for (let elem of divs) {
+			if (!elem.className.includes(' fixed-color') && elem.className != 'fixed-color') {
+				elem.style.backgroundColor = 'rgb(204, 204, 255)';
+			}
+		}
+	} else {
+		for (let elem of divs) {
+			if (!elem.className.includes(' fixed-color') && elem.className != 'fixed-color') {
+				elem.style.backgroundColor = 'rgb(153, 51, 153)';
+			}
+		}
+	}
+	document.getElementById('genre-clear').style.color = 'rgb(72, 90, 139)';
+	document.getElementById('left-coloumn').style.color = 'black';
 }
 
 document.addEventListener('DOMContentLoaded', function() {
