@@ -34,7 +34,7 @@ function switchFilter(filterName) {
 		document.getElementById(`${filterName}-filter`).style.color = 'green';
 	}
 
-	// Change game_objects opacity on the page
+	// Change gameObjects opacity on the page
 	for (let game of games) {
 		if (game.isVisible()) {
 			game.elem.style.opacity = 1;
@@ -43,7 +43,7 @@ function switchFilter(filterName) {
 		}
 	}
 
-	// Something in faggot:
+						// Something in faggot:
 	// ïðîâåðÿåì, åñëè âñå ôèëüòðû îòêëþ÷åíû, òî îòîáðàæàåì âñå èãðû
 	if (isClear()) {
 		for (let game of games) {
@@ -73,19 +73,53 @@ function isClear() {
 	return true;
 }
 
+// Function for theme switch button
+let activeLightTheme = true;
+function switchTheme() {
+	// Do not delete or rename this variables by embedding it directly
+	// into the for loop, otherwise problems may arise.
+	// With your health.
+	let ps = document.getElementsByTagName('p');
+	let divs = document.getElementsByTagName('div');
+
+	let newTextColor;
+	// Switches the background
+	if (activeLightTheme) {
+		document.getElementById('theme-button').src = "resources/light-theme-button.png";
+		document.body.style.backgroundImage = "url('resources/pattern-6-dark.png')";
+		newTextColor = 'white';
+		activeLightTheme = false;
+	} else {
+		document.getElementById('theme-button').src = "resources/dark-theme-button.png";
+		document.body.style.backgroundImage = "url('resources/pattern-6-light.png')";
+		newTextColor = 'black';
+		activeLightTheme = true;
+	}
+
+	for (let elem of ps) {
+		if (!elem.className.includes(' fixed-color') && elem.className != 'fixed-color') {
+			elem.style.color = newTextColor;
+		}
+	}
+	if (activeLightTheme) {
+		for (let elem of divs) {
+			if (!elem.className.includes(' fixed-color') && elem.className != 'fixed-color') {
+				elem.style.backgroundColor = 'rgb(204, 204, 255)';
+			}
+		}
+	} else {
+		for (let elem of divs) {
+			if (!elem.className.includes(' fixed-color') && elem.className != 'fixed-color') {
+				elem.style.backgroundColor = 'rgb(153, 51, 153)';
+			}
+		}
+	}
+	document.getElementById('genre-clear').style.color = 'rgb(72, 90, 139)';
+	document.getElementById('left-coloumn').style.color = 'black';
+}
+
 document.addEventListener('DOMContentLoaded', function() {
 	// Crutch
 	switchFilter('antistress');
 	switchFilter('antistress');
-	
-	let counter = 0;
-	for (let i of allFilters.keys()) {
-		counter = 0;
-		for (let j of games) {
-			if (j.tags.includes(i)) {
-				counter++;
-			}
-		}
-		document.getElementById(`${i}-filter`).textContent = document.getElementById(`${i}-filter`).textContent.replace('0', counter);
-	}
 });
