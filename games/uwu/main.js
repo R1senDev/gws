@@ -88,32 +88,63 @@ sprites.right.eye.happy.src = 'right/eye/happy.png';
 sprites.right.eye.idle.src = 'right/eye/idle.png';
 sprites.right.eye.winking.src = 'right/eye/winking.png';
 let currentEyesState = 'idle';
+let forcedEyesState = [false, false];
 function currentEyeSprite(side) {
 	if (side == 'left') {
-		switch (currentEyesState) {
-			case 'angry':
-				return sprites.left.eye.angry;
-			case 'chilling':
-				return sprites.left.eye.chilling;
-			case 'happy':
-				return sprites.left.eye.happy;
-			case 'idle':
-				return sprites.left.eye.idle;
-			case 'winking':
-				return sprites.left.eye.winking;
+		if (!forcedEyesState[0]) {
+			switch (currentEyesState) {
+				case 'angry':
+					return sprites.left.eye.angry;
+				case 'chilling':
+					return sprites.left.eye.chilling;
+				case 'happy':
+					return sprites.left.eye.happy;
+				case 'idle':
+					return sprites.left.eye.idle;
+				case 'winking':
+					return sprites.left.eye.winking;
+			}
+		} else {
+			switch (forcedEyesState[0]) {
+				case 'angry':
+					return sprites.left.eye.angry;
+				case 'chilling':
+					return sprites.left.eye.chilling;
+				case 'happy':
+					return sprites.left.eye.happy;
+				case 'idle':
+					return sprites.left.eye.idle;
+				case 'winking':
+					return sprites.left.eye.winking;
+			}
 		}
 	} else {
-		switch (currentEyesState) {
-			case 'angry':
-				return sprites.right.eye.angry;
-			case 'chilling':
-				return sprites.right.eye.chilling;
-			case 'happy':
-				return sprites.right.eye.happy;
-			case 'idle':
-				return sprites.right.eye.idle;
-			case 'winking':
-				return sprites.right.eye.winking;
+		if (!forcedEyesState[1]) {
+			switch (currentEyesState) {
+				case 'angry':
+					return sprites.right.eye.angry;
+				case 'chilling':
+					return sprites.right.eye.chilling;
+				case 'happy':
+					return sprites.right.eye.happy;
+				case 'idle':
+					return sprites.right.eye.idle;
+				case 'winking':
+					return sprites.right.eye.winking;
+			}
+		} else {
+			switch (forcedEyesState[1]) {
+				case 'angry':
+					return sprites.right.eye.angry;
+				case 'chilling':
+					return sprites.right.eye.chilling;
+				case 'happy':
+					return sprites.right.eye.happy;
+				case 'idle':
+					return sprites.right.eye.idle;
+				case 'winking':
+					return sprites.right.eye.winking;
+			}
 		}
 	}
 }
@@ -249,9 +280,11 @@ document.addEventListener('keydown', function(event) {
 		keys.pressed.push(event.keyCode);
 	}
 });
+
 document.addEventListener('keyup', function(event) {
 	keys.pressed = [];
 });
+
 document.addEventListener('mousedown', function(event) {
 	mouse.sx = event.clientX;
 	mouse.sy = event.clientY;
@@ -259,7 +292,16 @@ document.addEventListener('mousedown', function(event) {
 	if (mouse.x <= sprites.back.width / 2 && mouse.y <= sprites.back.height / 2) {
 		this.location.href = '../../index.html';
 	}
+	
+	if (mouse.x > eyePos[0][0] - currentEyeSprite('left').width && mouse.y > eyePos[0][1] - currentEyeSprite('left').height && mouse.x < eyePos[0][0] + currentEyeSprite('left').width && mouse.y < eyePos[0][0] + sprites.left.eye.height) {
+		forcedEyesState[0] = 'winking';
+		setTimeout(function() {
+			forcedEyesState[0] = false;
+		}, 500);	
+	}
+
 });
+
 document.addEventListener('mousemove', function(event) {
 	mouse.x = event.clientX;
 	mouse.y = event.clientY;
