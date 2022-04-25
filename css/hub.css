@@ -69,10 +69,8 @@ body {
 	font-size: 20px;
 }
 
-.header, .left-coloumn-container {
-	-webkit-touch-callout: none;
+.header, .genre, .genre-clear {
 	-webkit-user-select: none;
-	/*-html-user-select: none;*/
 	-moz-user-select: none;
 	-ms-user-select: none;
 	user-select: none;
@@ -94,7 +92,7 @@ body {
 	line-height: 1;
 	font-size: 18px;
 	float: left;
-	margin: auto 5px auto -17px;
+	margin: 20px 5px 0 -17px;
 	text-align: center;
 }
 
@@ -116,7 +114,7 @@ body {
 	background-color: rgb(204, 204, 255);
 	margin: 0 20px 20px -20px;
 	display: inline-block;
-	padding: 4px 20px 0 0;
+	padding: 4px 10px 0 0;
 	border-radius: 0 10px 10px 0;
 	border-color: black;
 	border-right-style: solid;
@@ -125,7 +123,7 @@ body {
 }
 
 hr {
-	margin: 0 -20px 0 -20px;
+	margin-right: -10px;
 	border: 1px solid rgba(0, 0, 0, 0.3);
 }
 
@@ -141,9 +139,14 @@ a {
 
 .genre {
 	cursor: pointer;
-	padding: 4px 8% 4px 10px;
+	padding: 4px 0 4px 10px;
 	width: 100%;
 }
+
+.genre:hover {
+	background: rgb(230, 230, 255);
+}
+
 .genre-clear {
 	font-size: large;
 	cursor: pointer;
@@ -152,17 +155,9 @@ a {
 	width: 100%;
 }
 
-.genre:hover {
-	background: rgb(230, 230, 255);
-}
-
 .games-container-container {
 	float: right;
 	width: 75%;
-}
-
-.games-container {
-	/*float: left;*/
 }
 
 .game-tile {
