@@ -1,0 +1,54 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    height: 100%;
+}
+
+hr {
+    margin: 5px -10px 5px -10px;
+    width: inherit + 20px;
+}
+
+.ui, #canvas, .settings {
+    position: absolute;
+}
+
+.settings-container {
+    width: 50%;
+}
+
+.settings {
+    text-align: center;
+    top: 20%;
+    min-width: 350px;
+    left: 5.5%;
+    padding: 10px;
+    border-radius: 10px;
+    border-color: black;
+    border-right-style: solid;
+    border-bottom-style: solid;
+    background-color: white;
+}
+
+.ui {
+    text-align: center;
+    height: 80%;
+    min-width: 300px;
+    top: 10%;
+    margin-bottom: 1010%;
+    left: 38.5%;
+    padding: 10px;
+    border-radius: 10px;
+    border-color: black;
+    border-right-style: solid;
+    border-bottom-style: solid;
+    background-color: white;
+}
+
+.ui-button {
+    cursor: pointer;
+    user-select: none;
+}
