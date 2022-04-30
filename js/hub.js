@@ -18,8 +18,8 @@ let games = [new Game('uwu', ['antistress']), new Game('lineRace', ['race'])];
 let allFilters = new Map([
 	['antistress', false],
 	['race', false],
-	['platformer', false],
-	['clicker', false],
+	//['platformer', false],
+	//['clicker', false],
 ]
 );
 
