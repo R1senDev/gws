@@ -1,8 +1,14 @@
 let lineNow = 1;
 let devTools = {
+	debugColor: '#e64c0c',
 	showBorders: false,
 	showCursorPath: true,
 };
+Object.defineProperty(devTools, 'debugColor', {
+	writable: false,
+	enumerable: false,
+	configurable: false
+});
 
 document.body.style.overflow = 'hidden';
 
@@ -223,22 +229,47 @@ function redraw() {
 
 	drawByCenter(currentEyeSprite('left'), eyePos[0][0], eyePos[0][1]);
 	drawByCenter(currentEyeSprite('right'), eyePos[1][0], eyePos[1][1]);
-	if (mouse.key > -1 && mouse.y > eyePos[0][1] + currentEyeSprite('left').height / 3 && currentEyesState == 'idle') {
+	if (mouse.key > -1 && mouse.y > eyePos[0][1] + currentEyeSprite('left').height / 3 && currentEyesState == 'idle' && forcedEyesState != [false, false]) {
 		context.strokeStyle = 'black';
 		if (mouse.x <= canvas.width / 2) {
 			context.beginPath();
-			for (let i = -100; i <= 200; i++) {
+			for (let i = -100; i <= 100; i++) {
 				context.moveTo(0, canvas.height / 2);
 				context.lineTo(canvas.width / 2, mouse.y + i);
 			}
 			context.stroke();
+			if (devTools.showBorders) {
+				context.strokeStyle = devTools.debugColor;
+				context.lineWidth = 1;
+				context.beginPath();
+				context.moveTo(0, canvas.height / 2);
+				context.lineTo(canvas.width / 2, mouse.y - 100);
+				context.moveTo(0, canvas.height / 2);
+				context.lineTo(canvas.width / 2, mouse.y + 100);
+				context.moveTo(canvas.width / 2, mouse.y + 100);
+				context.lineTo(canvas.width / 2, mouse.y - 100);
+
+				context.stroke();
+			}
 		} else {
 			context.beginPath();
-			for (let i = -100; i <= 200; i++) {
+			for (let i = -100; i <= 100; i++) {
 				context.moveTo(canvas.width, canvas.height / 2);
 				context.lineTo(canvas.width / 2, mouse.y + i);
 			}
 			context.stroke();
+			if (devTools.showBorders) {
+				context.strokeStyle = devTools.debugColor;
+				context.lineWidth = 1;
+				context.beginPath();
+				context.moveTo(canvas.width, canvas.height / 2);
+				context.lineTo(canvas.width / 2, mouse.y - 100);
+				context.moveTo(canvas.width, canvas.height / 2);
+				context.lineTo(canvas.width / 2, mouse.y + 100);
+				context.moveTo(canvas.width / 2, mouse.y + 100);
+				context.lineTo(canvas.width / 2, mouse.y - 100);
+				context.stroke();
+			}
 		}
 	}
 	drawByCenter(currentMouthSprite(), mouthPos[0], mouthPos[1]);
@@ -246,11 +277,11 @@ function redraw() {
 	context.drawImage(sprites.back, 0, 0, sprites.back.width / 2, sprites.back.height / 2);
 
 	if (devTools.showCursorPath) {
-		fillCircle(mouse.sx, mouse.sy, 5, 'red');
+		fillCircle(mouse.sx, mouse.sy, 5, devTools.debugColor);
 		context.beginPath();
 		context.moveTo(mouse.sx, mouse.sy);
 		context.lineTo(mouse.x, mouse.y);
-		context.strokeStyle = 'red';
+		context.strokeStyle = devTools.debugColor;
 		context.lineWidth = 2;
 		context.stroke();
 	}
@@ -285,6 +316,7 @@ document.addEventListener('keyup', function(event) {
 	keys.pressed = [];
 });
 
+let forcedWinkingTimeout = [0, 0];
 document.addEventListener('mousedown', function(event) {
 	mouse.sx = event.clientX;
 	mouse.sy = event.clientY;
@@ -293,13 +325,20 @@ document.addEventListener('mousedown', function(event) {
 		this.location.href = '../../index.html';
 	}
 	
-	if (mouse.x > eyePos[0][0] - currentEyeSprite('left').width && mouse.y > eyePos[0][1] - currentEyeSprite('left').height && mouse.x < eyePos[0][0] + currentEyeSprite('left').width && mouse.y < eyePos[0][0] + sprites.left.eye.height) {
+	if (mouse.x > eyePos[0][0] - currentEyeSprite('left').width / 2 && mouse.y > eyePos[0][1] - currentEyeSprite('left').height / 2 && mouse.x < eyePos[0][0] + currentEyeSprite('left').width / 2 && mouse.y < eyePos[0][0] + currentEyeSprite('left').width / 2) {
 		forcedEyesState[0] = 'winking';
-		setTimeout(function() {
+		clearTimeout(forcedWinkingTimeout[0]);
+		forcedWinkingTimeout[0] = setTimeout(function() {
 			forcedEyesState[0] = false;
-		}, 500);	
+		}, 500);
 	}
-
+	if (mouse.x > eyePos[1][0] - currentEyeSprite('right').width / 2 && mouse.y > eyePos[1][1] - currentEyeSprite('right').height / 2 && mouse.x < eyePos[1][0] + currentEyeSprite('right').width / 2 && mouse.y < eyePos[1][0] + currentEyeSprite('right').width / 2) {
+		forcedEyesState[1] = 'winking';
+		clearTimeout(forcedWinkingTimeout[1]);
+		forcedWinkingTimeout[1] = setTimeout(function() {
+			forcedEyesState[1] = false;
+		}, 500);
+	}
 });
 
 document.addEventListener('mousemove', function(event) {

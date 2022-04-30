@@ -1,54 +1,73 @@
 * {
-    margin: 0;
-    padding: 0;
+	margin: 0;
+	padding: 0;
 }
 
 html, body {
-    height: 100%;
+	height: 100%;
+}
+
+body {
+	overflow: hidden;
 }
 
 hr {
-    margin: 5px -10px 5px -10px;
-    width: inherit + 20px;
+	margin: 10px 0 10px 0;
 }
 
-.ui, #canvas, .settings {
-    position: absolute;
+.menu {
+	padding: 20px;
+	position: absolute;
+	width: 100%;
 }
 
-.settings-container {
-    width: 50%;
+#canvas {
+	position: absolute;
+}
+
+.left-block, .center-block, .right-block {
+	height: 100%;
+}
+
+.left-block, .right-block {
+	width: 33%;
+}
+
+.left-block {
+	float: left;
+}
+
+.center-block {
+	width: 32%;
+	margin-left: 35%;
+}
+
+.right-container {
+	margin-left: 67%;
+	float: right;
 }
 
 .settings {
-    text-align: center;
-    top: 20%;
-    min-width: 350px;
-    left: 5.5%;
-    padding: 10px;
-    border-radius: 10px;
-    border-color: black;
-    border-right-style: solid;
-    border-bottom-style: solid;
-    background-color: white;
+	text-align: center;
+	padding: 10px 0 10px 0;
+	border-radius: 10px;
+	border-color: black;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	background-color: white;
 }
 
 .ui {
-    text-align: center;
-    height: 80%;
-    min-width: 300px;
-    top: 10%;
-    margin-bottom: 1010%;
-    left: 38.5%;
-    padding: 10px;
-    border-radius: 10px;
-    border-color: black;
-    border-right-style: solid;
-    border-bottom-style: solid;
-    background-color: white;
+	text-align: center;
+	padding: 10px 0 10px 0;
+	border-radius: 10px;
+	border-color: black;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	background-color: white;
 }
 
 .ui-button {
-    cursor: pointer;
-    user-select: none;
+	cursor: pointer;
+	user-select: none;
 }

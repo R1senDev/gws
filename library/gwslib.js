@@ -295,6 +295,21 @@ class GameObject {
 			}
 		}
 	}
+	rotate(dAngle) {
+		this.draw(bgColor);
+		let x1 = (this.corner3()[0] + this.corner1()[0]) / 2;
+		let y1 = (this.corner3()[1] + this.corner1()[1]) / 2;
+		
+		//alert(this.totalAngle);
+		this.totalAngle += dAngle;
+		//alert(this.totalAngle);
+		
+		let x2 = (this.corner3()[0] + this.corner1()[0]) / 2;
+		let y2 = (this.corner3()[1] + this.corner1()[1]) / 2;
+		
+		this.node[0] += x1 - x2;
+		this.node[1] += y1 - y2;
+		}
 	// Возвращает массив всех целочисленных точек, принадлежащих объекту
 	get dots() {
 		let dots_ = [];
