@@ -85,13 +85,13 @@ function switchTheme() {
 	let newTextColor;
 	// Switches the background
 	if (activeLightTheme) {
-		document.getElementById('theme-button').src = "resources/light-theme-button.png";
-		document.body.style.backgroundImage = "url('resources/pattern-6-dark.png')";
+		document.getElementById('theme-button').src = "resources/light-theme-button.svg";
+		document.body.style.backgroundImage = "url('resources/bg-dark.png')";
 		newTextColor = 'white';
 		activeLightTheme = false;
 	} else {
-		document.getElementById('theme-button').src = "resources/dark-theme-button.png";
-		document.body.style.backgroundImage = "url('resources/pattern-6-light.png')";
+		document.getElementById('theme-button').src = "resources/dark-theme-button.svg";
+		document.body.style.backgroundImage = "url('resources/bg-light.png')";
 		newTextColor = 'black';
 		activeLightTheme = true;
 	}
@@ -106,11 +106,20 @@ function switchTheme() {
 			if (!elem.className.includes(' fixed-color') && elem.className != 'fixed-color') {
 				elem.style.backgroundColor = 'rgb(204, 204, 255)';
 			}
+			if (elem.className.includes('requires-border')) {
+				elem.style.borderStyle = 'none';
+				elem.style.backgroundPosition = '0 0';
+			}
 		}
 	} else {
 		for (let elem of divs) {
 			if (!elem.className.includes(' fixed-color') && elem.className != 'fixed-color') {
 				elem.style.backgroundColor = 'rgb(153, 51, 153)';
+			}
+			if (elem.className.includes('requires-border')) {
+				elem.style.borderColor = 'white';
+				elem.style.borderStyle = 'solid';
+				elem.style.backgroundPosition = '-3px -3px';
 			}
 		}
 	}
