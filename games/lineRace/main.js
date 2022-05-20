@@ -14,6 +14,7 @@ const debugColor = "#e64c0c";
 const fps = 30;
 const test_speed = 5;
 const test_rotate_speed = 5;
+let gameIsActive = true;
 
 canvas.width = document.body.clientWidth + 15;
 canvas.height = document.body.clientHeight + 25;
@@ -117,6 +118,7 @@ document.addEventListener('keyup', function(event) {
 let game_process = setInterval(function() {
     context.fillStyle = 'rgb(61, 61, 61)';
     context.fillRect(0, 0, canvas.width, canvas.height);
+    //car.draw('rgb(61, 61, 61)');
 
     if (active_keys["KeyW"]) {
         car.moveStraight(test_speed);
@@ -133,3 +135,7 @@ let game_process = setInterval(function() {
 
     car.draw();
 }, 1000 / fps);
+
+setInterval(function() {
+    
+}, 5);
