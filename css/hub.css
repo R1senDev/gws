@@ -13,9 +13,11 @@ body {
 	padding: 20px;
 	padding-top: 150px;
 	font-family: 'Comic CAT';
-	background-image: url('../resources/pattern-6-light.png');
+	background-image: url('../resources/bg-light.png');
 	background-repeat: repeat;
+	background-attachment: fixed;
 }
+
 .page-theme-switcher {
 	width: 30px;
 	height: 30px;
@@ -61,18 +63,24 @@ body {
 	z-index: 1;
 }
 
-.description {
+.description-container {
 	margin-bottom: 20px;
+	padding: 20px;
+	border-radius: 20px;
+	border-style: none solid solid none;
+	border-color: black;
+	background-color: rgb(204, 204, 255);
+}
+
+.description {
 }
 
 .description, .genre-label {
 	font-size: 20px;
 }
 
-.header, .left-coloumn-container {
-	-webkit-touch-callout: none;
+.header, .genre, .genre-clear {
 	-webkit-user-select: none;
-	/*-html-user-select: none;*/
 	-moz-user-select: none;
 	-ms-user-select: none;
 	user-select: none;
@@ -94,7 +102,7 @@ body {
 	line-height: 1;
 	font-size: 18px;
 	float: left;
-	margin: auto 5px auto -17px;
+	margin: 20px 5px 0 -17px;
 	text-align: center;
 }
 
@@ -116,7 +124,7 @@ body {
 	background-color: rgb(204, 204, 255);
 	margin: 0 20px 20px -20px;
 	display: inline-block;
-	padding: 4px 20px 0 0;
+	padding: 4px 10px 0 0;
 	border-radius: 0 10px 10px 0;
 	border-color: black;
 	border-right-style: solid;
@@ -125,7 +133,7 @@ body {
 }
 
 hr {
-	margin: 0 -20px 0 -20px;
+	margin-right: -10px;
 	border: 1px solid rgba(0, 0, 0, 0.3);
 }
 
@@ -141,9 +149,14 @@ a {
 
 .genre {
 	cursor: pointer;
-	padding: 4px 8% 4px 10px;
+	padding: 4px 0 4px 10px;
 	width: 100%;
 }
+
+.genre:hover {
+	background: rgb(230, 230, 255);
+}
+
 .genre-clear {
 	font-size: large;
 	cursor: pointer;
@@ -152,17 +165,9 @@ a {
 	width: 100%;
 }
 
-.genre:hover {
-	background: rgb(230, 230, 255);
-}
-
 .games-container-container {
 	float: right;
 	width: 75%;
-}
-
-.games-container {
-	/*float: left;*/
 }
 
 .game-tile {
@@ -187,6 +192,10 @@ a {
 	background-color: rgba(255, 255, 255, 0.5);
 	border-radius: 10px;
 	height: 100%;
+}
+
+.requires-border {
+	box-sizing: border-box;
 }
 
 #uwu {

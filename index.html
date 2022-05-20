@@ -12,62 +12,59 @@
 <body>
 
 	<!-- Page's Header -->
-	<div class="header-protector"></div>
+	<div class="header-protector fixed-color"></div>
 	<div class="header">
 		<img class="icon1" src="resources/logo.jpg" onclick="location.href = 'index.html'">
-		<img class="page-theme-switcher" id="theme-button" src="resources/light-theme-button.png" onclick="switchTheme()">
+		<img class="page-theme-switcher" id="theme-button" src="resources/dark-theme-button.svg" onclick="switchTheme()">
 		<h1 class="header-name" href="index.html">Lorem Ipsum</h1>
 	</div>
 
 	<!-- Page's description -->
-	<p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo<p>
+	<div class="description-container"><p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo<p></div>
 	
 	<!-- Left column with Filters and Ads -->
-	<div class="left-coloumn-container">
+	<div class="left-coloumn-container fixed-color">
 
 		<!-- All Filters -->
-		<div class="left-coloumn">
+		<div class="left-coloumn" id="left-coloumn">
 			<p class="genres-title">Игры по жанрам</p>
-			<hr>
 
 			<!-- Clear button -->
-			<div class="genre-clear" onclick="clearFilters()">
-				<p class="genre-label">Сбросить фильтр</p>
+			<div class="genre-clear fixed-color" onclick="clearFilters()">
+				<p class="genre-label" id="genre-clear">Сбросить фильтр</p>
 			</div>
 			<hr>
 
 			<!-- Antistress -->
-			<div class="genre" onclick="switchFilter('antistress')">
+			<div class="genre fixed-color" onclick="switchFilter('antistress')">
 				<p class="genre-label" id="antistress-filter">Антистрессы (0)</p>
 			</div>
 			<hr>
 
 			<!-- Race -->
-			<div class="genre" onclick="switchFilter('race')">
+			<div class="genre fixed-color" onclick="switchFilter('race')">
 				<p class="genre-label" id="race-filter">Гонки (0)</p>
 			</div>
-			<hr>
+			<!--hr>
 
-			<!-- Platformer -->
-			<div class="genre" onclick="switchFilter('platformer')">
-				<p class="genre-label" id="platformer-filter">Платформеры</p>
+			< Platformer >
+			<div class="genre fixed-color" onclick="switchFilter('platformer')">
+				<p class="genre-label" id="platformer-filter">Платформеры (0)</p>
 			</div>
 			<hr>
 
-			<!-- Clicker -->
-			<div class="genre" onclick="switchFilter('clicker')">
-				<p class="genre-label" id="clicker-filter">Кликеры</p>
-			</div>
-			<hr>
-
+			< Clicker >
+			<div class="genre fixed-color" onclick="switchFilter('clicker')">
+				<p class="genre-label" id="clicker-filter">Кликеры (0)</p>
+			</div-->
 		</div>
 
 		<!-- All Ads -->
 		<div class="ad-left-container">
-			<div class="ad-left-text">Р<br>е<br>к<br>л<br>а<br>м<br>а</div>
+			<div class="ad-left-text fixed-color">Р<br>е<br>к<br>л<br>а<br>м<br>а</div>
 
 			<!-- First Ad banner -->
-			<img class="ad-left" src="resources/ad.jpg" onclick="window.location =	 'https://ru.m.wiktionary.org/wiki/scam'">
+			<img class="ad-left" src="resources/ad.jpg" onclick="window.location = 'https://ru.m.wiktionary.org/wiki/scam'">
 
 			<!-- Next Ad banners... -->
 		</div>
@@ -75,28 +72,26 @@
 	</div>
 
 	<!-- Games' field -->
-	<div class="games-container-container">
+	<div class="games-container-container fixed-color">
 
 		<!-- First game container -->
-		<div class="games-container">
+		<div class="games-container fixed-color">
 
 			<!-- UwU -->
-			<div class="game-tile" id="uwu" href="games/uwu/uwu.html" onclick="window.location = 'games/uwu/uwu.html'">
-				<div class="game-tile-overlay"></div>
+			<div class="game-tile fixed-color requires-border" id="uwu" onclick="window.location = 'games/uwu/uwu.html'">
+				<div class="game-tile-overlay fixed-color"></div>
 			</div>
 
 			<!-- lineRace -->
-			<div class="game-tile" id="lineRace">
-				<div class="game-tile-overlay"></div>
+			<div class="game-tile fixed-color" id="lineRace" onclick="window.location = 'games/lineRace/lineRace.html'">
+				<div class="game-tile-overlay fixed-color"></div>
 			</div>
-
 		</div>
 
 		<!-- Next game containers... -->
 	</div>
 
-	<!-- Запуск JavaScript сценария для главной страницы -->
-	<script type="text/javascript" src="js/hub.js"></script>
-
+	<!-- Running a JavaScript for the main page -->
+	<script defer type="text/javascript" src="js/hub.js"></script>
 </body>
 </html>
