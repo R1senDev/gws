@@ -43,8 +43,7 @@ function switchFilter(filterName) {
 		}
 	}
 
-						// Something in faggot:
-	// ïðîâåðÿåì, åñëè âñå ôèëüòðû îòêëþ÷åíû, òî îòîáðàæàåì âñå èãðû
+	// checks if all filters are disabled, then displays all games
 	if (isClear()) {
 		for (let game of games) {
 			game.elem.style.opacity = 1;
@@ -52,7 +51,7 @@ function switchFilter(filterName) {
 	}
 }
 
-// î÷èùàåò ôèëüòðû
+// clears filters
 function clearFilters() {
 	for (let fltr of allFilters.keys()) {
 		allFilters.set(fltr, false);
@@ -63,7 +62,7 @@ function clearFilters() {
 	}
 }
 
-// åñëè âñå ôèëüòðû îòêëþ÷åíû, âîçâðàùÿåò true
+// returns true if all filters are disabled
 function isClear() {
 	for (let fltr of allFilters.keys()) {
 		if (allFilters.get(fltr)) {
@@ -125,6 +124,32 @@ function switchTheme() {
 	}
 	document.getElementById('genre-clear').style.color = 'rgb(72, 90, 139)';
 	document.getElementById('left-coloumn').style.color = 'black';
+}
+
+let backgroundShift = {
+	x: 0,
+	y: 0,
+
+	// It makes the background "ehat". Like your "kukuha".
+	engine: setInterval(function() {
+		backgroundShift.x += 0.25;
+		backgroundShift.y -= 0.125;
+		document.body.style.backgroundPosition = `${backgroundShift.x}px ${backgroundShift.y}px`;
+	}, 30),
+	pause: function() {
+		clearInterval(backgroundShift.engine);
+	},
+	play: function() {
+		backgroundShift.engine = setInterval(function() {
+			backgroundShift.x += 0.25;
+			backgroundShift.y -= 0.125;
+			document.body.style.backgroundPosition = `${backgroundShift.x}px ${backgroundShift.y}px`;
+		}, 30);
+	}
+};
+
+function grantAchivement(name, xp) {
+
 }
 
 document.addEventListener('DOMContentLoaded', function() {

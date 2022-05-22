@@ -11,9 +11,10 @@
 <!-- Body -->
 <body>
 
-	<div class="achivement-wrapper">
+	<div id="achivement-wrapper">
 		<div class="achivement">
-			Не спрашивай меня, что это за хня, всё будет в лучшем виде... Но потом
+			<h1 class="achivement-text">Новое достижение!</h1>
+			<h1 class="achivement-xp">+100 XP</h1>
 		</div>
 	</div>
 
@@ -22,8 +23,11 @@
 	<div class="header">
 		<img class="icon1" src="resources/logo.jpg" onclick="location.href = 'index.html'">
 		<img class="page-theme-switcher" id="theme-button" src="resources/dark-theme-button.svg" onclick="switchTheme()">
+		<img class="page-theme-switcher" id="pause-button" src="resources/pause.svg" onclick="backgroundShift.pause()">
 		<h1 class="header-name" href="index.html">Lorem Ipsum</h1>
 	</div>
+
+	<div class="crutch"></div>
 
 	<!-- Page's description -->
 	<div class="description-container"><p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo<p></div>
