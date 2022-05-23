@@ -31,6 +31,10 @@ function degToRad(degrees) {
 	return degrees * (Math.PI / 180);
 };
 
+function middleDot(d1, d2) {
+	return [(d1[0] + d2[0]) / 2, (d1[1] + d2[1]) / 2];
+}
+
 class Rectangle {
 	constructor(node, width, height, angle = 0, speed = test_speed, color = 'green') {
 		this.width = width;

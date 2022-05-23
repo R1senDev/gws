@@ -149,8 +149,18 @@ let backgroundShift = {
 };
 
 function grantAchivement(name, xp) {
-
+	document.getElementById('achivement-wrapper').style.animation = 'slide-in 1s cubic-bezier(0, 0, 0, 1);';
+	setTimeout(function() {
+		document.getElementById('achivement-wrapper').style.marginTop = '50px';
+		setTimeout(function() {
+			document.getElementById('achivement-wrapper').style.animation = 'slide-out 1s bezier-curve(0, 0, 0, 1)';
+			setTimeout(function() {
+				document.getElementById('achivement-wrapper').style.marginTop = '-100px';
+			}, 1000);
+		}, 5000);
+	}, 1000);
 }
+grantAchivement('', '');
 
 document.addEventListener('DOMContentLoaded', function() {
 	// Crutch
