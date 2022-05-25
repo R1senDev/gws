@@ -5,16 +5,16 @@
 <head>
 	<meta charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="css/hub.css">
-	<title>Uwu Games</title>
+	<title>UwU Games</title>
 </head>
 
 <!-- Body -->
 <body>
 
-	<div id="achivement-wrapper">
+	<div id="achivement-wrapper" class="achivement-wrapper-hidden">
 		<div class="achivement">
-			<h1 class="achivement-text">Новое достижение!</h1>
-			<h1 class="achivement-xp">+100 XP</h1>
+			<h1 id="achivement-text">Новое достижение!</h1>
+			<h1 id="achivement-xp">+100 XP</h1>
 		</div>
 	</div>
 
@@ -24,10 +24,11 @@
 		<img class="icon1" src="resources/logo.jpg" onclick="location.href = 'index.html'">
 		<img class="page-theme-switcher" id="theme-button" src="resources/dark-theme-button.svg" onclick="switchTheme()">
 		<img class="page-theme-switcher" id="pause-button" src="resources/pause.svg" onclick="backgroundShift.pause()">
+		<img class="page-theme-switcher" id="unittest-button" src="resources/bug.svg" onclick="unitTest()">
 		<h1 class="header-name" href="index.html">UwU Games</h1>
 	</div>
 
-	<div class="crutch"></div>
+	<div class="crutch fixed-color"></div>
 
 	<!-- Page's description -->
 	<div class="description-container"><p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo<p></div>

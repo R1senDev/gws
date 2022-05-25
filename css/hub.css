@@ -38,13 +38,26 @@ body {
 	background-position: 0px 0px;
 }
 
-#achivement-wrapper {
+.achivement-wrapper-hidden {
 	width: 100%;
 	height: 100px;
 
 	vertical-align: bottom;
 	text-align: center;
 	margin: -100px 0 0 -20px;
+	transition: margin 1s cubic-bezier(0, 0, 0, 1);
+	position: absolute;
+	z-index: 3;
+}
+
+.achivement-wrapper {
+	width: 100%;
+	height: 100px;
+
+	vertical-align: bottom;
+	text-align: center;
+	margin: 50px 0 0 -20px;
+	transition: margin 2s cubic-bezier(0, 0, 0, 1);
 	position: absolute;
 	z-index: 3;
 }
@@ -62,13 +75,12 @@ body {
 	border-width: 2px;
 }
 
-.achivement-text {
+#achivement-text #achivement-xp {
 	font-size: 20px;
 }
 
-.achivement-xp {
+#achivement-xp {
 	color: grey;
-	font-size: 20px;
 }
 
 .page-theme-switcher {

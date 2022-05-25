@@ -24,6 +24,10 @@ let allFilters = new Map([
 );
 
 function switchFilter(filterName) {
+	// Kakoj nahuy "chosen", eto, blyat, nepravil-
+	// nyj glagol, choose-chose-chosen, ti blyat v
+	// shkole ne uchilsya, shto li, suka???
+	//                        v~~~~~~
 	// Set opposite value for choosen filter
 	allFilters.set(filterName, !allFilters.get(filterName));
 
@@ -131,39 +135,112 @@ let backgroundShift = {
 	y: 0,
 
 	// It makes the background "ehat". Like your "kukuha".
-	engine: setInterval(function() {
-		backgroundShift.x += 0.25;
-		backgroundShift.y -= 0.125;
-		document.body.style.backgroundPosition = `${backgroundShift.x}px ${backgroundShift.y}px`;
-	}, 30),
-	pause: function() {
-		clearInterval(backgroundShift.engine);
+	playing: false,
+	playPause: function() {
+		if (playing) {
+			backgroundShift.pause();
+		} else {
+			backgroundShift.play();
+		}
+		backgroundShift.playing = !backgroundShift.playing
 	},
-	play: function() {
-		backgroundShift.engine = setInterval(function() {
+	engine: setInterval(function() {
+		if (backgroundShift.playing) {
 			backgroundShift.x += 0.25;
 			backgroundShift.y -= 0.125;
 			document.body.style.backgroundPosition = `${backgroundShift.x}px ${backgroundShift.y}px`;
-		}, 30);
+		}
+	}, 30),
+	pause: function() {
+		backgroundShift.playing = false;
+	},
+	play: function() {
+		backgroundShift.playing = true;
 	}
 };
 
-function grantAchivement(name, xp) {
-	document.getElementById('achivement-wrapper').style.animation = 'slide-in 1s cubic-bezier(0, 0, 0, 1);';
+let achivements = new Map([
+	[-1, {name: 'Тестовое достижение', xp: 0}],
+]);
+let achivementQueue = [];
+function achivementPopup(name, xp) {
+	let wrapper = document.getElementById('achivement-wrapper');
+	let heading = document.getElementById('achivement-text');
+	let xpText = document.getElementById('achivement-xp');
+	heading.textContent = 'Новое достижение!';
+	xpText.textContent = `+${xp} XP`;
+	xpText.style.opacity = '0%';
+	wrapper.style.margin = '50px 0 0 -20px';
+	let opacity = 0;
+	setInterval(function() {
+		opacity++;
+		if (opacity < 100) {
+			clearInterval(this);
+			delete opacity;
+		} else {
+			wrapper.style.opacity = `${opacity}%`;
+		}
+	}, 10);
 	setTimeout(function() {
-		document.getElementById('achivement-wrapper').style.marginTop = '50px';
+		let opacity = 100;
+		setInterval(function() {
+			opacity -= 2;
+			if (opacity < 0) {
+					clearInterval(this);
+					delete opacity;
+				} else {
+					heading.style.opacity = `${opacity}%`;
+				}
+		}, 1);
 		setTimeout(function() {
-			document.getElementById('achivement-wrapper').style.animation = 'slide-out 1s bezier-curve(0, 0, 0, 1)';
+			heading.textContent = name;
+			let opacity = 0;
+			setInterval(function() {
+				opacity += 2;
+				if (opacity > 100) {
+						clearInterval(this);
+						delete opacity;
+					} else {
+						heading.style.opacity = `${opacity}%`;
+						xpText.style.opacity = `${opacity}%`;
+					}
+			}, 1);
 			setTimeout(function() {
-				document.getElementById('achivement-wrapper').style.marginTop = '-100px';
-			}, 1000);
-		}, 5000);
-	}, 1000);
+				wrapper.style.margin = '-100px 0 0 -20px';
+				let opacity = 100;
+				setInterval(function() {
+					opacity--;
+					if (opacity < 0) {
+						clearInterval(this);
+						delete opacity;
+					} else {
+						wrapper.style.opacity = `${opacity}%`;
+					}
+				}, 10);
+			}, 3000);
+		}, 200);
+	}, 2000);
 }
-grantAchivement('', '');
+function grantAchivement(id) {
+	achivementQueue.push(id);
+}
+let achivementEngine = setInterval(function() {
+	if (achivementQueue.length > 0) {
+		let achivementDetails = achivements.get(achivementQueue.shift());
+		achivementPopup(achivementDetails.name, achivementDetails.xp);
+	}
+}, 7000);
+
+// Use this function to run unit tests.
+// It can be called by pressing a "debug" button in the header.
+function unitTest() {
+	grantAchivement(-1);
+}
 
 document.addEventListener('DOMContentLoaded', function() {
 	// Crutch
 	switchFilter('antistress');
 	switchFilter('antistress');
+
+	backgroundShift.pause();
 });
