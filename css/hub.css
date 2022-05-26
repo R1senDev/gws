@@ -4,32 +4,13 @@
 		url('../resources/ComicCAT.otf');
 }
 
-@keyframes slide-in {
-	from {
-		margin-top: -100px;
-	}
-	to {
-		margin-top: 50px;
-	}
-}
-
-@keyframes slide-out {
-	from {
-		margin-top: 50px;
-	}
-	to {
-		margin-top: -100px;
-	}
-}
-
 * {
 	margin: 0;
 	padding: 0;
 }
 
 body {
-	padding: 20px;
-	padding-top: 0;
+	padding: 0 20px 20px 20px;
 	font-family: 'Comic CAT';
 
 	background-image: url('../resources/bg-light.png');
@@ -38,28 +19,16 @@ body {
 	background-position: 0px 0px;
 }
 
-.achivement-wrapper-hidden {
-	width: 100%;
-	height: 100px;
-
-	vertical-align: bottom;
-	text-align: center;
-	margin: -100px 0 0 -20px;
-	transition: margin 1s cubic-bezier(0, 0, 0, 1);
-	position: absolute;
-	z-index: 3;
-}
-
 .achivement-wrapper {
 	width: 100%;
 	height: 100px;
 
 	vertical-align: bottom;
 	text-align: center;
-	margin: 50px 0 0 -20px;
-	transition: margin 2s cubic-bezier(0, 0, 0, 1);
+	margin: -100px 0 0 -20px;
+	transition: margin 1s cubic-bezier(0, 0, 0, 1.5);
 	position: absolute;
-	z-index: 3;
+	z-index: 4;
 }
 
 .achivement {
@@ -83,11 +52,66 @@ body {
 	color: grey;
 }
 
+#login-overlay {
+	text-align: center;
+	position: absolute;
+	z-index: 3;
+}
+
+#login-box {
+	width: auto;
+	text-align: center;
+	background-color: rgb(204, 204, 255);
+	margin-top: 50%;
+	padding: 20px;
+	opacity: 0%;
+	transition: opacity 1s cubic-bezier(0, 0, 0, 1);
+	display: inline-block;
+
+	border-radius: 20px;
+	border-style: none solid solid none;
+	border-color: black;
+}
+
+.login-input {
+	font-family: 'Comic CAT';
+	padding: 2px 0 2px 5px;
+
+	border-style: none none solid none;
+	border-color: black;
+	border-radius: 5px;
+}
+
+.login-input {
+	margin-bottom: 10px;
+}
+
+.login-button {
+	font-family: 'Comic CAT';
+	margin-bottom: 10px;
+	padding: 3px;
+	
+	border-style: none solid solid none;
+	border-color: black;
+	border-radius: 5px;
+}
+
+.header-right {
+	text-align: right;
+	float: right;
+}
+
 .page-theme-switcher {
 	width: 30px;
 	height: 30px;
-	float: right;
 	margin-right: 30px;
+	cursor: pointer;
+}
+
+.header-login {
+	font-size: 35px;
+	margin: 50px 30px 0 0;
+	display: inline;
 	cursor: pointer;
 }
 
@@ -141,9 +165,6 @@ body {
 	border-style: none solid solid none;
 	border-color: black;
 	background-color: rgb(204, 204, 255);
-}
-
-.description {
 }
 
 .description, .genre-label {

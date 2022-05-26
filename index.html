@@ -5,16 +5,27 @@
 <head>
 	<meta charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="css/hub.css">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<title>UwU Games</title>
 </head>
 
 <!-- Body -->
 <body>
-
-	<div id="achivement-wrapper" class="achivement-wrapper-hidden">
+	<div id="login-overlay">
+		<div id="login-box">
+			<h1 class="login-heading">Вход</h1>
+			<form id="login" action="php/login.php" method="POST">
+				<input class="login-input" type="text" maxlength="20" placeholder="Ваш никнейм" name="nickname"><br>
+				<input class="login-input" type="password" placeholder="Пароль" name="password"><br>
+				<input class="login-button" type="submit" value="Войти">
+				<p class="register">Нет аккаунта? <a href="register.html">Зарегистрироваться</a></p>
+			</form>
+		</div>
+	</div>
+	<div id="achivement-wrapper" class="achivement-wrapper">
 		<div class="achivement">
 			<h1 id="achivement-text">Новое достижение!</h1>
-			<h1 id="achivement-xp">+100 XP</h1>
+			<h1 id="achivement-xp">+0 XP</h1>
 		</div>
 	</div>
 
@@ -22,9 +33,14 @@
 	<div class="header-protector fixed-color"></div>
 	<div class="header">
 		<img class="icon1" src="resources/logo.jpg" onclick="location.href = 'index.html'">
-		<img class="page-theme-switcher" id="theme-button" src="resources/dark-theme-button.svg" onclick="switchTheme()">
-		<img class="page-theme-switcher" id="pause-button" src="resources/pause.svg" onclick="backgroundShift.pause()">
-		<img class="page-theme-switcher" id="unittest-button" src="resources/bug.svg" onclick="unitTest()">
+		<div class="header-right">
+			<img class="page-theme-switcher" id="theme-button" src="resources/dark-theme-button.svg" onclick="switchTheme()">
+			<img class="page-theme-switcher" id="pause-button" src="resources/pause.svg" onclick="backgroundShift.pause()">
+			<img class="page-theme-switcher" id="unittest-button" src="resources/bug.svg" onclick="unitTest()"><br>
+			<div onclick="window.location='login.html'">
+				<p class="header-login">Войти <span class="material-icons">login</span></p>
+			</div>
+		</div>
 		<h1 class="header-name" href="index.html">UwU Games</h1>
 	</div>
 
@@ -75,7 +91,7 @@
 			<div class="ad-left-text fixed-color">Р<br>е<br>к<br>л<br>а<br>м<br>а</div>
 
 			<!-- First Ad banner -->
-			<img class="ad-left" src="resources/ad.jpg" onclick="window.location = 'https://ru.m.wiktionary.org/wiki/scam'">
+			<img class="ad-left" src="resources/ad.jpg" onclick="grantAchivement(0)">
 
 			<!-- Next Ad banners... -->
 		</div>

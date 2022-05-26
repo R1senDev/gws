@@ -1,0 +1,58 @@
+@font-face {
+	font-family: 'Comic CAT';
+	src: local('Comic CAT'),
+		url('../resources/ComicCAT.otf');
+}
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	width: 100%;
+	font-family: "Comic CAT";
+	padding-top: 30%;
+	text-align: center;
+
+	background-image: url('../resources/bg-light.png');
+	background-repeat: repeat;
+	background-attachment: fixed;
+	background-position: 0px 0px;
+}
+
+#login-box {
+	width: 60%;
+	text-align: center;
+	background-color: rgb(204, 204, 255);
+	padding: 20px;
+	display: inline-block;
+
+	border-radius: 20px;
+	border-style: none solid solid none;
+	border-color: black;
+}
+
+.login-heading {
+	font-size: 70px;
+	margin-bottom: 20px;
+}
+
+.login-input {
+	font-family: 'Comic CAT';
+	padding: 2px 0 2px 5px;
+	border-style: none none solid none;
+	border-color: black;
+	border-radius: 5px;
+	margin-bottom: 10px;
+}
+
+.login-button {
+	font-family: 'Comic CAT';
+	margin-bottom: 10px;
+	padding: 3px;
+	
+	border-style: none solid solid none;
+	border-color: black;
+	border-radius: 5px;
+}

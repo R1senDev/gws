@@ -161,6 +161,7 @@ let backgroundShift = {
 
 let achivements = new Map([
 	[-1, {name: 'Тестовое достижение', xp: 0}],
+	[0, {name: 'Заскамили мамонта', xp: 0}],
 ]);
 let achivementQueue = [];
 function achivementPopup(name, xp) {
