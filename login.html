@@ -3,17 +3,24 @@
 <head>
 	<meta charset="utf-8">
 	<link rel="stylesheet" href="css/login.css">
+	<link href="https://fonts.googleapis.co
+m/icon?family=Material+Icons" rel="stylesheet">
 	<title>UwU Games | Вход</title>
 </head>
 <body>
-	<div id="login-box">
-		<h1 class="login-heading">Вход</h1>
-		<form id="login" action="php/login.php" method="POST">
-			<input class="login-input" type="text" maxlength="20" placeholder="Ваш никнейм" name="nickname"><br>
-			<input class="login-input" type="password" placeholder="Пароль" name="password"><br>
-			<input class="login-button" type="submit" value="Войти">
-			<p class="register">Нет аккаунта? <a href="register.html">Зарегистрироваться</a></p>
-		</form>
+	<div class="back-container" onclick="window.location='index.html'">
+		<p class="back">&#8592; На главную</p>
+	</div>
+	<div class="login-wrapper">
+		<div id="login-box">
+			<h1 class="login-heading">Вход</h1>
+			<form id="login" action="php/login.php" method="POST">
+				<input class="login-input" type="text" maxlength="20" placeholder="Никнейм" name="nickname"><br>
+				<input class="login-input" type="password" placeholder="Пароль" name="password"><br>
+				<input id="submit" class="login-button" type="submit" value="Войти">
+				<p class="register">Нет аккаунта? <a href="register.html">Зарегистрироваться</a></p>
+			</form>
+		</div>
 	</div>
 
 	<script defer src="js/login.js"></script>

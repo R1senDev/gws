@@ -26,3 +26,22 @@ let backgroundShift = {
 		backgroundShift.playing = true;
 	}
 };
+
+setInterval(function() {
+	let verified = false;
+	if (document.getElementByName('nickname').value.length >= 3) {
+		document.getElementByName('nickname').style.borderColor = 'rgb(0, 255, 0)';
+		verified = true;
+	} else {
+		document.getElementByName('nickname').style.borderColor = 'rgb(255, 0, 0)';
+	}
+
+	if (document.getElementByName('password').value.length > 0) {
+		document.getElementByName('password').style.borderColor = 'rgb(0, 255, 0)';
+	} else {
+		document.getElementByName('password').style.borderColor = 'rgb(255, 0, 0)';
+		verified = false;
+	}
+
+	document.getElementById('submit').disabled = !verified;
+}, 20);

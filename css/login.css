@@ -11,9 +11,8 @@
 
 body {
 	width: 100%;
+
 	font-family: "Comic CAT";
-	padding-top: 30%;
-	text-align: center;
 
 	background-image: url('../resources/bg-light.png');
 	background-repeat: repeat;
@@ -21,12 +20,31 @@ body {
 	background-position: 0px 0px;
 }
 
-#login-box {
-	width: 60%;
-	text-align: center;
+.back-container {
+	padding: 10px;
+	border-radius: 0 0 10px 0;
 	background-color: rgb(204, 204, 255);
+	display: inline-block;
+	cursor: pointer;
+}
+
+.back {
+	font-size: 40px;
+	user-select: none;
+}
+
+.login-wrapper {
+	width: 100%;
+	margin-top: 30vw;
+	text-align: center;
+}
+
+#login-box {
 	padding: 20px;
 	display: inline-block;
+
+	background-color: rgb(204, 204, 255);
+	text-align: center;
 
 	border-radius: 20px;
 	border-style: none solid solid none;
@@ -34,23 +52,35 @@ body {
 }
 
 .login-heading {
-	font-size: 70px;
 	margin-bottom: 20px;
+	font-size: 70px;
 }
 
 .login-input {
+	width: 80%;
+
+	margin-bottom: 15px;
+	padding: 5px 0 5px 10px;
+
 	font-family: 'Comic CAT';
-	padding: 2px 0 2px 5px;
+	font-size: 50px;
+	text-align: center;
+	
+	background-color: rgb(220, 255, 255);
 	border-style: none none solid none;
-	border-color: black;
-	border-radius: 5px;
-	margin-bottom: 10px;
+	border-color: rgb(255, 0, 0);
+	border-radius: 10px;
+	border-width: 5px;
+
+	transition: border-color 1s linear;
 }
 
 .login-button {
+	margin: 10px 0 20px 0;
+	padding: 5px;
+
 	font-family: 'Comic CAT';
-	margin-bottom: 10px;
-	padding: 3px;
+	font-size: 30px;
 	
 	border-style: none solid solid none;
 	border-color: black;
