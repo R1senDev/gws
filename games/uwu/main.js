@@ -1,3 +1,10 @@
+<?php
+if (isset($_GET['login'])) {
+	$login = $_GET['login'];
+} else {
+	$login = '';
+}
+?>
 let lineNow = 1;
 let devTools = {
 	debugColor: '#e64c0c',
@@ -322,7 +329,7 @@ document.addEventListener('mousedown', function(event) {
 	mouse.sy = event.clientY;
 	mouse.key = event.button;
 	if (mouse.x <= sprites.back.width / 2 && mouse.y <= sprites.back.height / 2) {
-		this.location.href = '../../index.html';
+		redirect('../../index.php');
 	}
 	
 	if (mouse.x > eyePos[0][0] - currentEyeSprite('left').width / 2 && mouse.y > eyePos[0][1] - currentEyeSprite('left').height / 2 && mouse.x < eyePos[0][0] + currentEyeSprite('left').width / 2 && mouse.y < eyePos[0][0] + currentEyeSprite('left').width / 2) {

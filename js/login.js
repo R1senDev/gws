@@ -28,8 +28,9 @@ let backgroundShift = {
 };
 
 setInterval(function() {
+	document.getElementById('nickname').value = document.getElementById('nickname').value.toLowerCase();
 	let verified = false;
-	if (document.getElementById('nickname').value.length >= 3) {
+	if ((document.getElementById('nickname').value.length >= 3) && (!document.getElementById('nickname').value.includes(' '))) {
 		if ((document.getElementById('nickname').value.toLowerCase() == 'risenanderson') || (document.getElementById('nickname').value.toLowerCase() == 'lord-laminat')) {
 			document.getElementById('nickname').style.borderColor = 'rgb(0, 0, 255)';
 		} else {
