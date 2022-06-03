@@ -24,7 +24,7 @@ m/icon?family=Material+Icons" rel="stylesheet">
 				<input class="login-input" type="text" placeholder="Никнейм" name="nickname" id="nickname"><br>
 				<input class="login-input" type="password" placeholder="Пароль" name="password" id="password"><br>
 				<input id="submit" class="login-button" type="submit" value="Войти">
-				<p class="register">Нет аккаунта? <a href="register.html">Зарегистрироваться</a></p>
+				<p class="register">Нет аккаунта? <a href="register.php">Зарегистрироваться</a></p>
 			</form>
 		</div>
 	</div>
