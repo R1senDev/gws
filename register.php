@@ -15,14 +15,22 @@ m/icon?family=Material+Icons" rel="stylesheet">
 			<h1 class="login-heading">Вход</h1>
 			<form id="login" action="php/register.php" method="POST">
 				<input class="login-input" type="text" placeholder="Никнейм" name="nickname" id="nickname"><br>
-				<input class="login-input" type="mail" placeholder="Почта" name="mail">
+				<input class="login-input" type="mail" placeholder="Почта" name="mail" id="mail">
 				<input class="login-input" type="password" placeholder="Пароль" name="password" id="password"><br>
 				<input class="login-input" type="password" placeholder="Пароль (ещё раз)" id="confirm-password"><br>
-				<input class="login-input" type="date" name="birthday" id="birtday"><br>
-				<input class="login-radio" type="radio" name="sex" id="male" onclick="document.getElementById('sex').value  = 'Мужской'">
-				<input class="l
-ogin-radio" type="radio" name="sex" id="female" onclick="document.getElementById('sex').value = 'Женский'">
-				<input class="login-radio" type="radio" name="sex" id="helicopter" onclick="document.getElementById('sex').value = 'Боевой вертолёт Ми-28'"><br>
+				<input class="login-input" type="date" name="birthday" id="birthday"><br>
+				<p class="age-warn">Не беспокойтесь: вы сможете использовать сайт независимо от вашего возраста!</p>
+				<div class="sex-container">
+					<div class="sex">
+						<input class="login-radio" type="radio" name="sex" id="male" onclick="document.getElementById('sex').value  = 'Мужской'">
+						<label for="male">Насильник</label>
+						<input class="login-radio" type="radio" name="sex" id="female" onclick="document.getElementById('sex').value = 'Женский'">
+						<label for="female">Посудомойка</label>
+						<input class="login-radio" type="radio" name="sex" id="helicopter" onclick="document.getElementById('sex').value = 'Боевой вертолёт Ми-28'">
+						<label for="helicopter">Боевой вертолет Ми-28</label>
+					</div>
+				</div>
+				<input class="login-button" type="submit" value="Зарегистрироваться" id="submit">
 				<p class="register">Уже есть аккаунт? <a href="login.php">Войти</a></p>
 				<input type="hidden" name="sex" id="sex">
 			</form>

@@ -79,6 +79,32 @@ body {
 	transition: border-color .2s linear;
 }
 
+.age-warn {
+	margin: 5px 0 10px 0;
+	color: grey;
+}
+
+.sex-wrapper {
+	width: 80%;
+	margin-bottom: 15px;
+}
+
+.sex input[type='radio'] + label:not(:last-child) {
+	margin: 0 20px 0 5px;
+}
+
+.sex input[type='radio'] + label:last-child {
+        margin: 0 0 0 5px;
+}
+
+label {
+	vertical-align: top;
+}
+
+input[type='radio'] {
+	transform: scale(1.5);
+}
+
 .login-button {
 	margin: 10px 0 20px 0;
 	padding: 5px;

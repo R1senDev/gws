@@ -57,7 +57,7 @@ setInterval(function() {
 		verified = false;
 	}
 
-	if (document.getElementById('confirm-password').value == document.getElementById('password')) {
+	if (document.getElementById('confirm-password').value == document.getElementById('password').value && document.getElementById('confirm-password').value.length >= 6) {
 		document.getElementById('confirm-password').style.borderColor = 'rgb(0, 255, 0)';
 	} else {
 		document.getElementById('confirm-password').style.borderColor = 'rgb(255, 0, 0)';
@@ -65,6 +65,13 @@ setInterval(function() {
 	}
 
 	if (!document.getElementById('male').checked && !document.getElementById('female').checked && !document.getElementById('helicopter').checked) {
+		verified = false;
+	}
+
+	if (document.getElementById('birthday').value != '') {
+		document.getElementById('birthday').style.borderColor = 'rgb(0, 255, 0)';
+	} else {
+		document.getElementById('birthday').style.borderColor = 'rgb(255, 0, 0)';
 		verified = false;
 	}
 	
