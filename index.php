@@ -47,7 +47,7 @@ if ('<?= $login ?>'.length != 0) {
 			<img class="page-theme-switcher" id="theme-button" src="resources/dark-theme-button.svg" onclick="switchTheme()">
 			<img class="page-theme-switcher" id="pause-button" src="resources/pause.svg" onclick="backgroundShift.pause()">
 			<img class="page-theme-switcher" id="unittest-button" src="resources/bug.svg" onclick="unitTest()"><br>
-			<div onclick="window.location='login.php?login=<?= $login ?>'">
+			<div onclick="window.location='login.php?login=<?= $login ?>&from=index.php&fromtype=main'">
 				<p id="header-login" class="header-login">Войти <span class="material-icons">login</span></p>
 			</div>
 		</div>
@@ -82,13 +82,13 @@ if ('<?= $login ?>'.length != 0) {
 			<div class="genre fixed-color" onclick="switchFilter('race')">
 				<p class="genre-label" id="race-filter">Гонки (0)</p>
 			</div>
-			<!--hr>
-
-			< Platformer >
-			<div class="genre fixed-color" onclick="switchFilter('platformer')">
-				<p class="genre-label" id="platformer-filter">Платформеры (0)</p>
-			</div>
 			<hr>
+
+			<!-- Roguelike -->
+			<div class="genre fixed-color" onclick="switchFilter('roguelike')">
+				<p class="genre-label" id="roguelike-filter">Рогалики (0)</p>
+			</div>
+			<!--hr>
 
 			< Clicker >
 			<div class="genre fixed-color" onclick="switchFilter('clicker')">
@@ -115,7 +115,7 @@ if ('<?= $login ?>'.length != 0) {
 		<div class="games-container fixed-color">
 
 			<!-- UwU -->
-			<div class="game-tile fixed-color requires-border" id="uwu" onclick="window.location = 'games/uwu/uwu.php?login=<?= $login?>">
+			<div class="game-tile fixed-color requires-border" id="uwu" onclick="window.location = 'games/uwu/uwu.php?login=<?= $login ?>">
 				<div class="game-tile-overlay fixed-color"></div>
 			</div>
 
@@ -123,6 +123,12 @@ if ('<?= $login ?>'.length != 0) {
 			<div class="game-tile fixed-color" id="lineRace" onclick="window.location = 'games/lineRace/lineRace.html'">
 				<div class="game-tile-overlay fixed-color"></div>
 			</div>
+
+			<!-- The Blade -->
+			<div class="game-tile fixed-color" id="theBlade" onclick="window.location = 'games/theBlade/theBlade.php?login=<?= login ?>'">
+				<div class="game-tile-overlay fixed-color"></div>
+			</div>
+
 		</div>
 
 		<!-- Next game containers... -->

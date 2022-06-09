@@ -4,6 +4,11 @@ if (isset($_GET['login'])) {
 } else {
 	$login = '';
 }
+if (isset($_GET['from'])) {
+	$from = $_GET['from'];
+} else {
+	$from = '';
+}
 ?>
 <html>
 <head>
@@ -20,7 +25,7 @@ m/icon?family=Material+Icons" rel="stylesheet">
 	<div class="login-wrapper">
 		<div id="login-box">
 			<h1 class="login-heading">Вход</h1>
-			<form id="login" action="php/login.php" method="POST">
+			<form id="login" action="php/login.php?from=<?= $from ?>" method="POST">
 				<input class="login-input" type="text" placeholder="Никнейм" name="nickname" id="nickname"><br>
 				<input class="login-input" type="password" placeholder="Пароль" name="password" id="password"><br>
 				<input id="submit" class="login-button" type="submit" value="Войти">

@@ -1,17 +1,21 @@
 <?php
 	$login = $_POST['nickname'];
 	$password = $_POST['password'];
+	$from = $_GET['from'];
+	$fromtype = $_GET['fromtype'];
+	if ($fromtype == 'main') {
+		$returnto = 'на главную страницу';
+	}
 ?>
 <html>
 <head>
    	<title>POST-запрос</title>
 </head>
 <body>
-	<p>Переданный nickname: <?= $login ?></p>
-	<p>Переданный password: <?= $password ?></p>
+<h1 class="text">Привет, <?= $login ?>! Вы успешно вошли в аккаунт. Возвращаем вас <?= $returnto ?></h1>
 	<script>
 	setTimeout(function() {
-		window.location = '../index.php?login=<?= $login ?>&action=login';
+		window.location = '../<?= $from ?>?login=<?= $login ?>&from=login.php';
 	}, 3000);
 	</script>
 </body>
