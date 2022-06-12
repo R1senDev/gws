@@ -1,9 +1,4 @@
 <?php
-if (isset($_GET['login'])) {
-	$login = $_GET['login'];
-} else {
-	$login = '';
-}
 if (isset($_GET['from'])) {
 	$from = $_GET['from'];
 } else {
@@ -19,7 +14,7 @@ m/icon?family=Material+Icons" rel="stylesheet">
 	<title>UwU Games | Вход</title>
 </head>
 <body>
-	<div class="back-container" onclick="window.location='index.php'">
+	<div class="back-container" onclick="window.location='index.php?login=<?= $login ?>'">
 		<p class="back">&#8592; На главную</p>
 	</div>
 	<div class="login-wrapper">
@@ -34,11 +29,15 @@ m/icon?family=Material+Icons" rel="stylesheet">
 		</div>
 	</div>
 
-<script>
-if ('<?= $login ?>'.length > 0) {
-	window.location = 'account.php?login=<?= $login ?>';
-}
-</script>
+	<script>
+	function getCookie(name) {
+		let matches = document.cookie.match(new RegExp("(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"));
+		return matches ? decodeURIComponent(matches[1]) : undefined;
+	}
+	if (getCookie('login') != undefined) {
+		window.location = 'account.php';
+	}
+	</script>
 	<script defer src="js/login.js"></script>
 </body>
 </html>

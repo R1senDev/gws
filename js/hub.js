@@ -76,8 +76,18 @@ function isClear() {
 	return true;
 }
 
+function getCookie(name) {
+	let matches = document.cookie.match(new RegExp("(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"));
+	return matches ? decodeURIComponent(matches[1]) : undefined;
+}
+
 // Function for theme switch button
-let activeLightTheme = true;
+let activeLightTheme;
+if (getCookie('theme') == undefined) {
+	activeLightTheme = true;
+} else {
+	activeLightTheme = getCookie('theme');
+}
 function switchTheme() {
 	// Do not delete or rename this variables by embedding it directly
 	// into the for loop, otherwise problems may arise.
@@ -92,11 +102,13 @@ function switchTheme() {
 		document.body.style.backgroundImage = "url('resources/bg-dark.png')";
 		newTextColor = 'white';
 		activeLightTheme = false;
+		document.cookie = 'theme=dark; path=/ expires=31536000';
 	} else {
 		document.getElementById('theme-button').src = "resources/dark-theme-button.svg";
 		document.body.style.backgroundImage = "url('resources/bg-light.png')";
 		newTextColor = 'black';
 		activeLightTheme = true;
+		document.cookie = 'theme=light; path=/ expires=31536000';
 	}
 
 	for (let elem of ps) {
@@ -245,3 +257,5 @@ document.addEventListener('DOMContentLoaded', function() {
 
 	backgroundShift.pause();
 });
+
+alert(document.cookie);

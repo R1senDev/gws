@@ -75,5 +75,9 @@ setInterval(function() {
 		verified = false;
 	}
 	
+	if (!document.getElementById('privacypolicy').checked) {
+		verified = false;
+	}
+	
 	document.getElementById('submit').disabled = !verified;
 }, 20);

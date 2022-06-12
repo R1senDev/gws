@@ -1,0 +1,49 @@
+@font-face {
+	font-family: 'Comic CAT';
+	src: local('Comic CAT'),
+		url('../resources/ComicCAT.otf');
+}
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	width: 100%;
+
+	font-family: "Comic CAT";
+
+	background-image: url('../resources/bg-light.png');
+	background-repeat: repeat;
+	background-attachment: fixed;
+	background-position: 0px 0px;
+}
+
+.back-container {
+	padding: 10px;
+
+	background-color: rgb(204, 204, 255);
+	cursor: pointer;
+
+	border-radius: 0 0 10px 0;
+	border-style: solid;
+	border-color: black;
+	border-width: 3px;
+}
+
+.back {
+	font-size: 40px;
+	user-select: none;
+}
+
+.logout {
+	padding: 10px;
+	cursor: pointer;
+
+	background-color: rgb(204, 204, 255);
+
+	border-radius: 10px;
+	border-color: red;
+	border-width: 3px;
+}

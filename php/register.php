@@ -15,5 +15,11 @@ $sex = !empty($_POST['sex']) ? $_POST['sex'] : '';
 	<p>Переданный password: <?= $password ?></p>
 	<p>Переданный birthday: <?= $birthday ?></p>
 	<p>Переданный sex: <?= $sex ?></p>
+<script>
+	document.cookie = 'login=<?= $nickname ?>; path=/; max-age=604800';
+setTimeout(function() {
+	window.location = '../index.php';
+}, 3000);
+</script>
 </body>
 </html>

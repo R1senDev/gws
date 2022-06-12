@@ -23,13 +23,15 @@ m/icon?family=Material+Icons" rel="stylesheet">
 				<div class="sex-container">
 					<div class="sex">
 						<input class="login-radio" type="radio" name="sex" id="male" onclick="document.getElementById('sex').value  = 'Мужской'">
-						<label for="male">Насильник</label>
+						<label for="male">Мужской</label>
 						<input class="login-radio" type="radio" name="sex" id="female" onclick="document.getElementById('sex').value = 'Женский'">
-						<label for="female">Посудомойка</label>
+						<label for="female">Женский</label>
 						<input class="login-radio" type="radio" name="sex" id="helicopter" onclick="document.getElementById('sex').value = 'Боевой вертолёт Ми-28'">
 						<label for="helicopter">Боевой вертолет Ми-28</label>
 					</div>
 				</div>
+				<input type="checkbox" id="privacypolicy">
+				<label for="privacypolicy">Я принимаю <a href="privacypolicy.php">Политику конфиденциальности</a></label><br>
 				<input class="login-button" type="submit" value="Зарегистрироваться" id="submit">
 				<p class="register">Уже есть аккаунт? <a href="login.php">Войти</a></p>
 				<input type="hidden" name="sex" id="sex">

@@ -115,7 +115,7 @@ if ('<?= $login ?>'.length != 0) {
 		<div class="games-container fixed-color">
 
 			<!-- UwU -->
-			<div class="game-tile fixed-color requires-border" id="uwu" onclick="window.location = 'games/uwu/uwu.php?login=<?= $login ?>">
+			<div class="game-tile fixed-color requires-border" id="uwu" onclick="window.location = 'games/uwu/uwu.php">
 				<div class="game-tile-overlay fixed-color"></div>
 			</div>
 
@@ -125,7 +125,7 @@ if ('<?= $login ?>'.length != 0) {
 			</div>
 
 			<!-- The Blade -->
-			<div class="game-tile fixed-color" id="theBlade" onclick="window.location = 'games/theBlade/theBlade.php?login=<?= login ?>'">
+			<div class="game-tile fixed-color" id="theBlade" onclick="window.location = 'games/theBlade/theBlade.php'">
 				<div class="game-tile-overlay fixed-color"></div>
 			</div>
 
@@ -136,5 +136,6 @@ if ('<?= $login ?>'.length != 0) {
 
 	<!-- Running a JavaScript for the main page -->
 	<script defer type="text/javascript" src="js/hub.js"></script>
+	<script>alert(document.cookie)</script>
 </body>
 </html>

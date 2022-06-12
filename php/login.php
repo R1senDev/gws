@@ -14,6 +14,7 @@
 <body>
 <h1 class="text">Привет, <?= $login ?>! Вы успешно вошли в аккаунт. Возвращаем вас <?= $returnto ?></h1>
 	<script>
+	document.cookie = 'login=<?= $login ?>; path=/; max-age=604800';
 	setTimeout(function() {
 		window.location = '../<?= $from ?>?login=<?= $login ?>&from=login.php';
 	}, 3000);
