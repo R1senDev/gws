@@ -329,7 +329,7 @@ document.addEventListener('mousedown', function(event) {
 	mouse.sy = event.clientY;
 	mouse.key = event.button;
 	if (mouse.x <= sprites.back.width / 2 && mouse.y <= sprites.back.height / 2) {
-		redirect('../../index.php');
+		window.location = '../../index.php?from=uwu';
 	}
 	
 	if (mouse.x > eyePos[0][0] - currentEyeSprite('left').width / 2 && mouse.y > eyePos[0][1] - currentEyeSprite('left').height / 2 && mouse.x < eyePos[0][0] + currentEyeSprite('left').width / 2 && mouse.y < eyePos[0][0] + currentEyeSprite('left').width / 2) {
