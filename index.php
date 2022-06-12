@@ -135,7 +135,6 @@ if ('<?= $login ?>'.length != 0) {
 	</div>
 
 	<!-- Running a JavaScript for the main page -->
-	<script defer type="text/javascript" src="js/hub.js"></script>
-	<script>alert(document.cookie)</script>
+	<script defer src="js/index.js"></script>
 </body>
 </html>

@@ -8,7 +8,7 @@
 	<div class="back-container" onclick="window.location='index.php?login=<?= $login ?>'">
 		<p class="back">&#8592; На главную</p>
 	</div>
-	<div class='logout' onclick="document.cookie = 'login=0; path=/; max-age=-1'">
+	<div class="logout" onclick="document.cookie = 'login=0; path=/; max-age=-1'">
 		<h2>Выйти из аккаунта</h2>
 	</div>
 </body>
