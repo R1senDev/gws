@@ -1,14 +1,10 @@
 <?php
-if (isset($_GET['login'])) {
-	$login = $_GET['login'];
-} else {
-	$login = '';
-}
 if (isset($_GET['action'])) {
 	$action = $_GET['action'];
 } else {
 	$action = '';
 }
+$isAdmin = false;
 ?>
 <html>
 
@@ -47,7 +43,7 @@ if ('<?= $login ?>'.length != 0) {
 			<img class="page-theme-switcher" id="theme-button" src="resources/dark-theme-button.svg" onclick="switchTheme()">
 			<img class="page-theme-switcher" id="pause-button" src="resources/pause.svg" onclick="backgroundShift.pause()">
 			<img class="page-theme-switcher" id="unittest-button" src="resources/bug.svg" onclick="unitTest()"><br>
-			<div onclick="window.location='login.php?login=<?= $login ?>&from=index.php&fromtype=main'">
+			<div onclick="window.location='login.html">
 				<p id="header-login" class="header-login">Войти <span class="material-icons">login</span></p>
 			</div>
 		</div>

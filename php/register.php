@@ -4,6 +4,7 @@ $mail = !empty($_POST['mail']) ? $_POST['mail'] : '';
 $password = !empty($_POST['password']) ? $_POST['password'] : '';
 $birthday = !empty($_POST['birthday']) ? $_POST['birthday'] : '';
 $sex = !empty($_POST['sex']) ? $_POST['sex'] : '';
+$code = rand(1000, 9999);
 ?>
 <html>
 <head>
@@ -15,6 +16,7 @@ $sex = !empty($_POST['sex']) ? $_POST['sex'] : '';
 	<p>Переданный password: <?= $password ?></p>
 	<p>Переданный birthday: <?= $birthday ?></p>
 	<p>Переданный sex: <?= $sex ?></p>
+	<p>Код подтверждения: <?= $code ?></p>
 <script>
 	document.cookie = 'login=<?= $nickname ?>; path=/; max-age=604800';
 setTimeout(function() {

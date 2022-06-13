@@ -21,13 +21,14 @@ body {
 }
 
 .back-container {
+	width: 300px;
 	padding: 10px;
 
 	background-color: rgb(204, 204, 255);
 	cursor: pointer;
 
 	border-radius: 0 0 10px 0;
-	border-style: solid;
+	border-style: none solid solid none;
 	border-color: black;
 	border-width: 3px;
 }

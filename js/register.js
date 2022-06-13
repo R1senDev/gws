@@ -28,6 +28,24 @@ let backgroundShift = {
 		backgroundShift.playing = true;
 	}
 };
+function setMaxBirthday() {
+	let today = new Date();
+	let month;
+	if (today.getMonth() + 1 < 10) {
+		month = `0${today.getMonth() + 1}`;
+	} else {
+		month = today.getMonth() + 1;
+	}
+	let day;
+	if (today.getDate() < 10) {
+		day = `0${today.getDate()}`;
+	} else {
+		day = today.getDate();
+	}
+	document.getElementById('birthday').max = `${today.getFullYear()}-${month}-${day}`;
+	console.log(`${today.getFullYear()}-${month}-${day}`);
+}
+setMaxBirthday();
 
 setInterval(function() {
 	document.getElementById('nickname').value = document.getElementById('nickname').value.toLowerCase();
@@ -75,7 +93,7 @@ setInterval(function() {
 		verified = false;
 	}
 	
-	if (!document.getElementById('privacypolicy').checked) {
+	if (!document.getElementById('agree').checked) {
 		verified = false;
 	}
 	
