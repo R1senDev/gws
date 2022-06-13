@@ -30,8 +30,8 @@ m/icon?family=Material+Icons" rel="stylesheet">
 						<label for="helicopter">Боевой вертолет Ми-28</label>
 					</div>
 				</div>
-				<input type="checkbox" id="privacypolicy">
-				<label for="privacypolicy">Я принимаю <a href="privacypolicy.php">Политику конфиденциальности</a></label><br>
+				<input type="checkbox" id="agree">
+				<label for="agree">Я принимаю <a href="agreement.html">Пользовательское соглашение</a> и <a href="privacy.php">Политику конфиденциальности</a></label><br>
 				<input class="login-button" type="submit" value="Зарегистрироваться" id="submit">
 				<p class="register">Уже есть аккаунт? <a href="login.php">Войти</a></p>
 				<input type="hidden" name="sex" id="sex">
