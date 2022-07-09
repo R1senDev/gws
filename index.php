@@ -5,6 +5,13 @@ if (isset($_GET['action'])) {
 	$action = '';
 }
 $isAdmin = false;
+if (isset($_COOKIE['login'])) {
+	$accText = 'Мой аккаунт';
+	$accLink = 'account.php';
+} else {
+	$accText = 'Войти';
+	$accLink = 'login.php';
+}
 ?>
 <html>
 
@@ -18,11 +25,6 @@ $isAdmin = false;
 
 <!-- Body -->
 <body>
-<script type="text/javascript">
-if ('<?= $login ?>'.length != 0) {
-	document.getElementById('header-login').textContent = 'Мой профиль ';
-}
-</script>
 	<div id="login-overlay">
 		<div id="login-box">
 			<h1 class="login-heading">Вход</h1>
@@ -43,8 +45,8 @@ if ('<?= $login ?>'.length != 0) {
 			<img class="page-theme-switcher" id="theme-button" src="resources/dark-theme-button.svg" onclick="switchTheme()">
 			<img class="page-theme-switcher" id="pause-button" src="resources/pause.svg" onclick="backgroundShift.pause()">
 			<img class="page-theme-switcher" id="unittest-button" src="resources/bug.svg" onclick="unitTest()"><br>
-			<div onclick="window.location='login.html">
-				<p id="header-login" class="header-login">Войти <span class="material-icons">login</span></p>
+			<div onclick="window.location='<?= $accLink ?>'">
+			<p id="header-login" class="header-login"><?= $accText ?> <span class="material-icons">login</span></p>
 			</div>
 		</div>
 		<h1 class="header-name" href="index.php?login=<?= $login ?>">UwU Games</h1>
@@ -111,7 +113,7 @@ if ('<?= $login ?>'.length != 0) {
 		<div class="games-container fixed-color">
 
 			<!-- UwU -->
-			<div class="game-tile fixed-color requires-border" id="uwu" onclick="window.location = 'games/uwu/uwu.php">
+			<div class="game-tile fixed-color requires-border" id="uwu" onclick="window.location = 'games/uwu/uwu.html'">
 				<div class="game-tile-overlay fixed-color"></div>
 			</div>
 

@@ -1,10 +1,3 @@
-<?php
-if (isset($_GET['login'])) {
-	$login = $_GET['login'];
-} else {
-	$login = '';
-}
-?>
 let lineNow = 1;
 let devTools = {
 	debugColor: '#e64c0c',
@@ -36,6 +29,13 @@ function updateCanvasSize() {
 		[Math.round(canvas.width / 3 - 50), Math.round(canvas.height / 3)],
 		[Math.round(canvas.width / 3 * 2 + 50), Math.round(canvas.height / 3)]
 	];
+
+	let orientation = (screen.orientation || {}).type || screen.mozOrientation || screen.msOrientation;
+	if (orientation == 'portrait-primary' || orientation == 'portrait-secondary') {
+		document.getElementById('orientationWarning').style.display = 'block';
+	} else {
+		document.getElementById('orientationWarning').style.display = 'none';
+	}
 }
 updateCanvasSize();
 

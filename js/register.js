@@ -96,6 +96,13 @@ setInterval(function() {
 	if (!document.getElementById('agree').checked) {
 		verified = false;
 	}
-	
+
 	document.getElementById('submit').disabled = !verified;
 }, 20);
+
+document.getElementById('login').addEventListener('keydown', function(event) {
+	if(event.keyCode == 13) {
+		event.preventDefault();
+		return false;
+	}
+});

@@ -1,0 +1,41 @@
+@font-face {
+	font-family: 'Comic CAT';
+	src: local('Comic CAT'),
+		url('../../resources/ComicCAT.otf');
+}
+
+* {
+	margin: 0;
+	padding: 0;
+
+	font-family: 'Comic CAT';
+}
+
+body {
+	background-color: rgb(204, 204, 255);
+}
+
+.center {
+	padding: 20px;
+
+	background-color: red;
+	border-style: none solid solid none;
+	border-color: black;
+	border-width: 2px;
+	border-radius: 0 0 10px 10px;
+
+	text-align: center;
+}
+
+h1 {
+	font-size: 150px;
+}
+
+p {
+	margin: 20px;
+	text-align: justify;
+}
+
+img {
+	margin-bottom: -100px;
+}

@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet">
+	<title>UwU Games | Поддержка</title>
+</head>
+<body>
+	<div class="heading">
+		<img class="back" src="resources/back.svg">
+		<h1>Написать в поддержку</h1>
+	</div>
+	<div class="content">
+		<form id="form" action="php/support.php" method="post">
+			<input type="text" name="name" placeholder="Имя">
+			<select name="reporttype" required>
+				<option disabled>Выберите</option>
+				<option value="Проблема с сайтом">Проблема с сайтом</option>
+				<option value="Предложение сотрудничества">Предложение сотрудничества</option>
+				<option value="Прекрасная идея">Прекрасная идея</option>
+				<option value="Жалоба">Жалоба</option>
+			</select>
+			<select name="ideatype">
+				<option disabled>Выберите</option>
+				<option value="Изменение для сайта">Изменение для сайта</option>
+				<option value="Изменение для игры">Изменение для игры</option>
+				<option value="Новую игру!">Новую игру!</option>
+				<option value="Что-то другое">Что-то другое</option>
+			</select>
+		</form>
+	</div>
+	<script>
+		document.getElementById('form').addEventListener('keydown', function(event) {
+			if (event.keyCode == 13) {
+				event.preventDefault();
+				return false;
+			}
+		});
+	</script>
+</body>
+</head>
