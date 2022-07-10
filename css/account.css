@@ -16,12 +16,66 @@
 	padding: 10px;
 
 	background-color: rgb(204, 204, 255);
+	user-select: none;
 	cursor: pointer;
 
 	border-style: none solid solid none;
 	border-color: black;
 	border-width: 2px;
-	border-radius: 0 0 10px 10px;
+	border-radius: 0 0 10px 0;
+}
+
+.nick {
+	font-size: 50px;
+}
+
+.level-container {
+	margin: 10px 10px 0 10px;
+	padding: 10px;
+
+	background-color: rgb(204, 204, 255);
+	position: relative;
+
+	border-style: none solid solid none;
+	border-color: black;
+	border-width: 2px;
+	border-radius: 10px;
+}
+
+table {
+	height: 100%;
+	margin: -10px 0 0 0;
+	position: absolute;
+	float: left;
+}
+
+#avatar {
+	width: 75px;
+	height: 75px;
+
+	font-size: 65px;
+	text-align: center;
+	line-height: 75px;
+	user-select: none;
+
+	border-style: solid;
+	border-color: black;
+	border-width: 2px;
+	border-radius: 500px;
+}
+
+.nick-wrapper {
+	margin-left: 95px;
+}
+
+progress {
+	margin: 0 10px 0 10px;
+	display: inline;
+}
+
+.minxp, progress, .maxxp {
+	display: inline;
+	font-size: 25px;
 }
 
 .logout {
@@ -29,7 +83,10 @@
 	padding: 10px;
 
 	background-color: rgb(204, 204, 255);
+	font-size: 25px;
+	user-select: none;
 	cursor: pointer;
+
 	border-style: solid;
 	border-color: red;
 	border-width: 1px 3px 3px 1px;

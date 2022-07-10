@@ -6,6 +6,12 @@
 	<title>Line Race</title>
 </head>
 <body>
+	<script>
+	console.log(window.screen.width);
+		if (window.screen.width < 1920) {
+			window.location = '../mobileIncompatible.php?from=lineRace';
+		}
+	</script>
 	<canvas id="canvas"></canvas>
 	<div class="menu">
 		<div class="left-block">

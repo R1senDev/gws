@@ -1,3 +1,11 @@
+<?php
+if (isset($_GET['from']) {
+	$from = $_GET['from'];
+} else {
+	$from = 'index.php';
+}
+?>
+
 <html>
 <head>
 	<meta charset="utf-8">
@@ -13,7 +21,7 @@ m/icon?family=Material+Icons" rel="stylesheet">
 	<div class="login-wrapper">
 		<div id="login-box">
 			<h1 class="login-heading">Вход</h1>
-			<form id="login" action="php/register.php" method="POST">
+			<form id="login" action="php/register.php?from=<?= $from ?>" method="POST">
 				<input class="login-input" type="text" placeholder="Никнейм" name="nickname" id="nickname"><br>
 				<input class="login-input" type="mail" placeholder="Почта" name="mail" id="mail">
 				<input class="login-input" type="password" placeholder="Пароль" name="password" id="password"><br>
@@ -33,7 +41,7 @@ m/icon?family=Material+Icons" rel="stylesheet">
 				<input type="checkbox" id="agree">
 				<label for="agree">Я принимаю <a href="agreement.html">Пользовательское соглашение</a> и <a href="privacy.html">Политику конфиденциальности</a></label><br>
 				<input class="login-button" type="submit" value="Зарегистрироваться" id="submit">
-				<p class="register">Уже есть аккаунт? <a href="login.php">Войти</a></p>
+				<p class="register">Уже есть аккаунт? <a href="login.php?from=<?= $from ?>">Войти</a></p>
 				<input type="hidden" name="sex" id="sex">
 			</form>
 		</div>

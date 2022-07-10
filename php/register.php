@@ -1,4 +1,5 @@
 <?php
+$from = $_GET['from'];
 $nickname = $_POST['nickname'];
 $mail = $_POST['mail'];
 $password = $_POST['password'];
@@ -20,9 +21,9 @@ $sex = $_POST['sex'];
 	<p>Переданный sex: <?= $sex ?></p>
 	<p>Код подтверждения: <?= $code ?></p>
 <script>
-	document.cookie = 'login=<?= $nickname ?>; path=/; max-age=604800';
+document.cookie = 'login=<?= $nickname ?>; path=/; max-age=604800';
 setTimeout(function() {
-	window.location = '../index.php';
+	window.location = '../<?= $from ?>';
 }, 3000);
 </script>
 </body>

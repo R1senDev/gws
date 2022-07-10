@@ -21,6 +21,36 @@ let eyePos = [
 	[Math.round(canvas.width / 3 * 2), Math.round(canvas.height / 3)]
 ];
 
+function cookie(cookieName) {
+	let results = document.cookie.match('(^|;) ?' + cookieName + '=([^;]*)(;|$)');
+	if (results) {
+		return decodeURI(results[2]);
+	} else {
+		return null;
+	}
+}
+
+function _GET(key) {
+	let query = String(document.location.href).split('?');
+	if (query[1]) {
+		let part = query[1].split('&');
+		for (i = 0; i < part.length; i++) {
+			let data = part[i].split('=');
+			if (data[0] == key && data[1]) {
+				return data[1];
+			}
+			if (data[0] == key && !data[1]) {
+				return '';
+			}
+		}
+	}
+	return null;
+}
+
+if (cookie('login') == null) {
+	window.location = '../../login.php?from=uwu';
+}
+
 function updateCanvasSize() {
 	canvas.width = document.body.clientWidth;
 	canvas.height = document.body.clientHeight + 50;
