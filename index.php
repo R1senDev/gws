@@ -55,7 +55,12 @@ if (isset($_COOKIE['login'])) {
 	<div class="crutch fixed-color"></div>
 
 	<!-- Page's description -->
-	<div class="description-container"><p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo<p></div>
+	<div class="burger">
+		<div class="burger-button">
+			<p class="burger-button-text">Магазин &#128722;</p>
+		</div>
+		<hr>
+	</div>
 	
 	<!-- Left column with Filters and Ads -->
 	<div class="left-coloumn-container fixed-color">

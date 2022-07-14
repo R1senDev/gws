@@ -158,16 +158,26 @@ body {
 	height: 150px;
 }
 
-.description-container {
+.burger {
+	width: 100%;
 	margin: 0 0 20px 0;
-	padding: 20px;
 	border-radius: 20px;
 	border-style: none solid solid none;
 	border-color: black;
+	border-width: 2px;
 	background-color: rgb(204, 204, 255);
 }
 
-.description, .genre-label {
+.burger-button {
+	text-align: center;
+	cursor: pointer;
+}
+
+.burger-button-text {
+	font-size: 50px;
+}
+
+.burger-button, .genre-label {
 	font-size: 20px;
 }
 

@@ -1,8 +1,13 @@
 <?php
-if (isset($_GET['from']) {
+if (isset($_GET['from'])) {
 	$from = $_GET['from'];
 } else {
 	$from = 'index.php';
+}
+if (isset($_GET['ref'])) {
+	$ref = $_GET['ref'];
+} else {
+	$ref = '';
 }
 ?>
 
@@ -38,6 +43,7 @@ m/icon?family=Material+Icons" rel="stylesheet">
 						<label for="helicopter">Боевой вертолет Ми-28</label>
 					</div>
 				</div>
+				<h2 id="invite">Вас пригласил: <?= $ref ?></h2>
 				<input type="checkbox" id="agree">
 				<label for="agree">Я принимаю <a href="agreement.html">Пользовательское соглашение</a> и <a href="privacy.html">Политику конфиденциальности</a></label><br>
 				<input class="login-button" type="submit" value="Зарегистрироваться" id="submit">
@@ -47,6 +53,11 @@ m/icon?family=Material+Icons" rel="stylesheet">
 		</div>
 	</div>
 
+<script defer>
+	if ('<?= $ref ?>' == '') {
+		document.getElementById('invite').style.display = 'none';
+	}
+	</script>
 	<script defer src="js/register.js"></script>
 </body>
 </html>

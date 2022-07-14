@@ -24,7 +24,7 @@ m/icon?family=Material+Icons" rel="stylesheet">
 					<label for="remember">Запомнить меня</label>
 				</div>
 				<input id="submit" class="login-button" type="submit" value="Войти">
-				<p class="register">Нет аккаунта? <a href="register.html?from=<?= $from ?>">Зарегистрироваться</a></p>
+				<p class="register">Нет аккаунта? <a href="register.php?from=<?= $from ?>">Зарегистрироваться</a></p>
 			</form>
 		</div>
 	</div>
